@@ -1,0 +1,141 @@
+Project Work - Richiesta Cliente
+
+Siamo UniversoGames, un'azienda giornalistica del settore videogiochi.
+Abbiamo bisogno di un nuovo CMS e relativo sito vetrina per le nostre news/recensioni
+
+Abbiamo già il backend. Sarebbero solo da implementare le due applicazioni client con Angular.
+
+Servono due applicazioni separate.
+
+1) CMS
+Il cms non ha bisogno di una grafica avvanzata, ci basta poter interagire con i dati presenti sul 
+nostro server che sono disponibili tramite un servizio REST.
+Nello specifico avere la possibilità di effettuare operazioni CRUD su 
+La lista dei Videogiochi, la lista delle categorie, la lista delle News e la lista delle Recensioni
+
+2) Sito
+Il sito nella prima fase deve solo fornire la possibilità di consultare
+le news e le recensioni e la lista dei videogiochi nel catalogo del sito, con una grafica più accattivante.
+
+Sulla home page vogliamo vedere la lista delle news con titolo e l'autore, aprendo la news visualizzare il dettaglio.
+-
+Su un'altra pagina visualizzare la lista delle recensioni.
+Aprendo una recensione, oltre a vedere il dettaglio, devo riuscire ad aprire la scheda del videogioco
+su cui è stata fatta la recensione.
+
+E una pagina dove visualizzare la lista dei videogiochi in catalogo.
+
+Di seguito gli indirizzi del servizio REST
+(Al posto di {GROUP-NAME} mettere il vostro gruppo, sono disponibili i seguenti gruppi,
+utilizzate quello relativo al vostro gruppo: ['GROUP-I','GROUP-II','GROUP-III','GROUP-IV','GROUP-V'], 
+es: https://project-works-rest-api.onrender.com/api/v1/GROUP-IV/ingredient)
+
+
+
+==============================================================================
+
+
+Gestione Categorie:
+https://project-works-rest-api.onrender.com/api/v1/GROUP-IV/category
+JSON:
+{
+    "_id": "63e269516a62243363259191",
+    "name": "PS3",
+    "__v": 0
+}
+
+
+==============================================================================
+
+
+Gestione Catalogo Videogiochi
+https://project-works-rest-api.onrender.com/api/v1/GROUP-IV/videogame
+JSON:
+{
+    "_id": "63e26b5516952167414879d0",
+    "title": "Fire Emblem Engage",
+    "category": "Nintendo Switch",
+    "releaseDate": "2023-01-20",
+    "genre": "Tactical RPG",
+    "softwareHouse": "TK",
+    "publisher": "Nintendo",
+    "numberOfPlayers": 1,
+    "languages": {
+        "voice": [
+            "eng",
+            "jap",
+            "ch"
+        ],
+        "text": [
+            "eng",
+            "fr",
+            "de",
+            "sp",
+            "ita",
+            "jap"
+        ]
+    },
+    "__v": 0
+},
+
+
+
+==============================================================================
+
+
+
+Gestione News
+https://project-works-rest-api.onrender.com/api/v1/GROUP-IV/news
+JSON:
+{
+    "_id": "63e26fb3a6043ae8a30adf4d",
+    "title": "Fire Emblem ULTRA!!",
+    "category": "Nintendo Switch",
+    "imageUrl": "https://sm.ign.com/ign_it/preview/f/fire-emble/fire-emblem-engage-preview-a-loving-tribute-to-nonexistent-n_ebat.jpg",
+    "content": "Nuovo Gioco di Fire Emblem annunciato",
+    "publicationDate": "2023-02-10",
+    "authorName": "Mario Rossi",
+    "tags": [
+        "Fire Emblem",
+        "RPG",
+        "Tactical RPG",
+        "NEWS"
+    ],
+    "__v": 0
+}
+
+
+
+==============================================================================
+
+
+
+Gestione Reviews 
+https://project-works-rest-api.onrender.com/api/v1/GROUP-IV/review
+JSON:
+{
+    "_id": "63e270cb9d4681180b141f6b",
+    "title": "Fire Emblem Engage",
+    "publicationDate": "2023-02-10",
+    "content": "Nuovo Gioco di Fire Emblem annunciato",
+    "score": 10,
+    "reviewerName": "Mario Rossi",
+    "imageUrls": [
+        "https://sm.ign.com/ign_it/preview/f/fire-emble/fire-emblem-engage-preview-a-loving-tribute-to-nonexistent-n_ebat.jpg",
+        "https://i.ytimg.com/vi/3xTPZpDDACU/maxresdefault.jpg"
+    ],
+    "reviewedGame": {
+        "id": "63e26b5516952167414879d0",
+        "name": "Fire Emblem"
+    },
+    "__v": 0
+}
+
+
+==============================================================================
+
+
+Attenzione che id è gestito come stringa ed è sul campo "_id"
+Ignorate pure il "__v"
+
+Se volete, potete fare delle richieste per includere delle nuove proprietà ai dati lato API.
