@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { CategorieService } from '../service/categorie.service';
 
 @Component({
   selector: 'app-modifica',
@@ -13,7 +14,7 @@ export class ModificaComponent {
     nomecategoria : new FormControl(null)
   })
 
-  idCategoriaDaModificare = -1
+
   editmode = false
 
   constructor(private categorieservice: CategorieService, private route: ActivatedRoute) { }
@@ -23,15 +24,19 @@ export class ModificaComponent {
     if (CategoriaDaModificare) {
       this.editmode = true
       this.form = new FormGroup({
-        nomecategoria = new FormControl(CategoriaDaModificare.nome)
+        nomecategoria : new FormControl(CategoriaDaModificare.name)
       })
     }
   }
 
-  salvaModifiche() {
-    this.categorieservice.updateCategoria(this.route.snapshot.paramMap.get('id')!),
-      this.form.value)
-    alert("Categoria Modificata!")
+
+
+   salvaModifiche() {
+    this.categorieservice.updateCategoria(
+      this.route.snapshot.paramMap.get('id')!,
+      this.form.value
+    )
+    alert("Categoria modificata!")
   }
 
   aggiungi() {
