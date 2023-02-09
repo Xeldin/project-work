@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
-import { AuthService } from 'app/auth/auth.service';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -9,21 +9,31 @@ import { AuthService } from 'app/auth/auth.service';
 })
 export class LoginComponent {
   form = new FormGroup({
-    username: new FormControl(''),
-    password: new FormControl(''),
+    username: new FormControl('', {
+      nonNullable: true,
+      validators: Validators.required,
+    }),
+    password: new FormControl('', {
+      nonNullable: true,
+      validators: Validators.required,
+    }),
   });
 
   constructor(private authService: AuthService) {}
 
+  onLogin() {
+    if (this.form.invalid) {
+      alert('Inserire tutti i campi richiesti!');
+      return;
+    }
 
-
-
-  onSubmit() {
     const { username, password } = this.form.getRawValue();
-    if (this.authService.login(username!, password!)) {
-      alert('Login con successo');
-    } else {
-      alert('Ops... credenziali errate!');
+
+    const logged = this.authService.login(username, password);
+
+    // Flip dell'if
+    if (!logged) {
+      alert('Credenziali errate!');
     }
   }
 }
