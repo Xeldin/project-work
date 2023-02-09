@@ -16,4 +16,16 @@ export class RecensioneService {
 	getRecensione(id: string): Observable<Recensione> {
 		return this.http.get<Recensione>(this.apiUrl + '/' + id);
 	}
+
+	createRecensione(recensione: Recensione): Observable<Recensione> {
+		return this.http.post<Recensione>(this.apiUrl, recensione);
+	}
+
+	updateRecensione(id: string, recensione: Recensione): Observable<Recensione> {
+		return this.http.put<Recensione>(this.apiUrl + '/' + id, recensione);
+	}
+
+	deleteRecensione(id: string): Observable<void> {
+		return this.http.delete<void>(this.apiUrl + '/' + id);
+	}
 }

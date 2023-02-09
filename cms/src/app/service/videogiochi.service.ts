@@ -16,4 +16,16 @@ export class RecensioneService {
 	getVideogioco(id: string): Observable<Videogioco> {
 		return this.http.get<Videogioco>(this.apiUrl + '/' + id);
 	}
+
+	createVideogioco(videogioco: Videogioco): Observable<Videogioco> {
+		return this.http.post<Videogioco>(this.apiUrl, videogioco);
+	}
+
+	updateVideogioco(id: string, videogioco: Videogioco): Observable<Videogioco> {
+		return this.http.put<Videogioco>(this.apiUrl + '/' + id, videogioco);
+	}
+
+	deleteVideogioco(id: string): Observable<void> {
+		return this.http.delete<void>(this.apiUrl + '/' + id);
+	}
 }
