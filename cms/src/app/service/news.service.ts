@@ -17,11 +17,11 @@ export class NewsService {
 		return this.http.get<News>(this.apiUrl + '/' + id);
 	}
 
-	createNews(news: News): Observable<News> {
+	createNews(news: Omit<News, "id">): Observable<News> {
 		return this.http.post<News>(this.apiUrl, news);
 	}
 
-	updateNews(id: string, news: News): Observable<News> {
+	updateNews(id: string, news: Omit<News, "id">): Observable<News> {
 		return this.http.put<News>(this.apiUrl + '/' + id, news);
 	}
 

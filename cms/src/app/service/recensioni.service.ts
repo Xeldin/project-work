@@ -17,11 +17,11 @@ export class RecensioneService {
 		return this.http.get<Recensione>(this.apiUrl + '/' + id);
 	}
 
-	createRecensione(recensione: Recensione): Observable<Recensione> {
+	createRecensione(recensione: Omit<Recensione, "id">): Observable<Recensione> {
 		return this.http.post<Recensione>(this.apiUrl, recensione);
 	}
 
-	updateRecensione(id: string, recensione: Recensione): Observable<Recensione> {
+	updateRecensione(id: string, recensione: Omit<Recensione, "id">): Observable<Recensione> {
 		return this.http.put<Recensione>(this.apiUrl + '/' + id, recensione);
 	}
 

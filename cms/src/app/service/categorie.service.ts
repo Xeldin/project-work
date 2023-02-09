@@ -17,11 +17,11 @@ export class CategorieService {
 		return this.http.get<Categoria>(this.apiUrl + '/' + id);
 	}
 
-	createCategoria(categoria: Categoria): Observable<Categoria> {
+	createCategoria(categoria: Omit<Categoria, "id">): Observable<Categoria> {
 		return this.http.post<Categoria>(this.apiUrl, categoria);
 	}
 
-	updateCategoria(id: string, categoria: Categoria): Observable<Categoria> {
+	updateCategoria(id: string, categoria: Omit<Categoria, "id">): Observable<Categoria> {
 		return this.http.put<Categoria>(this.apiUrl + '/' + id, categoria);
 	}
 
