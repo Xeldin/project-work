@@ -1,1 +1,12 @@
-<p>header works!</p>
+<nav>
+    <div class="nav-links">
+      <a routerLink="/" *ngIf="isLogged$ | async">Home</a>
+      <a routerLink="/login" *ngIf="isNotLogged$ | async">Login</a>
+      <a routerLink="/pannello-moderatore">Moderatore</a>
+    </div>
+
+    <div class="user" *ngIf="loggedUser$ | async as loggedUser">
+      Benvenuto {{ loggedUser.username }}
+      <button (click)="onLogout()">Logout</button>
+    </div>
+  </nav>

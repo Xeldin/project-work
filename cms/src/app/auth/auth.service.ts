@@ -16,20 +16,8 @@ export class AuthService {
     },
     {
       id:1,
-      username: 'pippo',
-      password: 'pluto',
-      ruolo: 'user',
-    },
-    {
-      id:2,
-      username: 'damiano',
-      password: 'naziskin',
-      ruolo: 'moderatore'
-    },
-    {
-      id:3,
-      username: 'porco',
-      password: 'naziskin',
+      username: 'moderator',
+      password: '5678',
       ruolo: 'moderatore'
     }
   ];
