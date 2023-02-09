@@ -1,0 +1,32 @@
+<form class="formVideogame" [formGroup]="form">
+    <input type="text" placeholder="Titolo" formControlName="title">
+    <input type="text" placeholder="Data rilascio aaaa-mm-gg" formControlName="releaseDate">
+    <input type="text" placeholder="Genere" formControlName="genre">
+    <input type="text" placeholder="Prodotto da" formControlName="softwareHouse">
+    <input type="text" placeholder="Pubblicato da" formControlName="publisher">
+    <input type="number" placeholder="Numero giocatori" formControlName="numberOfPlayers">
+    <div formArrayName="languages">
+        <p>Lingua doppiaggio</p>
+        <div formArrayName="voice">
+           <button type="button" (click)="onClickAddVoice()">+</button>
+            <div *ngFor="let _ of voiceFormArray.controls; let i=index">
+                <input type="text" [formControlName]="i" [placeholder]="'Lingua doppiaggio' + (i+1)">
+                <button type="button" (click)="onRemoveVoice(i)">-</button>
+            </div>
+        </div>
+        <p>Lingua sottotitoli</p>
+        <div formArrayName="text">
+            <button type="button" (click)="onClickAddText()">+</button>
+            <div *ngFor="let _ of voiceFormArray.controls; let i=index">
+                <input type="text" [formControlName]="i" [placeholder]="'Lingua sottotitoli' + (i+1)">
+                <button type="button" (click)="onRemoveText(i)">-</button>
+            </div>
+        </div>
+    </div>
+    <div id="salvaModifiche" *ngIf="isEditMode; else elseBlock">
+        <button type="submit" (click)="salvaModifiche()">SALVA MODIFICHE</button>
+    </div>
+    <ng-template #elseBlock>
+        <button type="submit" (click)="onClickAggiungi()">AGGIUNGI VIDEOGAME</button>
+    </ng-template>
+</form>
