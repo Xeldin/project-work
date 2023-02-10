@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Videogame } from 'src/app/model/videogioco';
+import { Videogioco } from 'src/app/model/videogioco';
+import { VideogiochiService } from 'src/app/service/videogiochi.service';
 
 @Component({
   selector: 'app-lista-videogames',
@@ -8,7 +9,7 @@ import { Videogame } from 'src/app/model/videogioco';
   styleUrls: ['./lista-videogames.component.css']
 })
 export class ListaVideogamesComponent implements OnInit {
-  videogames$!: Observable<Videogame[]>;
+  videogames$!: Observable<Videogioco[]>;
 
   constructor (private videogiochiService: VideogiochiService){}
 

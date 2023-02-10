@@ -1,7 +1,8 @@
 import { Input } from '@angular/core';
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Language, Videogame } from 'src/app/model/videogioco';
+import { Language, Videogioco } from 'src/app/model/videogioco';
+import { VideogiochiService } from 'src/app/service/videogiochi.service';
 
 @Component({
   selector: 'app-card-videogames',
@@ -20,7 +21,7 @@ export class CardVideogamesComponent {
 
   constructor(private videogiochiService: VideogiochiService) {}
 
-  videogames$!: Observable<Videogame[]>;
+  videogames$!: Observable<Videogioco[]>;
 
   onClickElimina(id:string){
     this.videogiochiService.deleteVideogioco(id).subscribe(()=>{

@@ -3,7 +3,8 @@ import { Component } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Videogame } from 'src/app/model/videogioco';
+import { Videogioco} from 'src/app/model/videogioco';
+import { VideogiochiService } from 'src/app/service/videogiochi.service';
 
 @Component({
   selector: 'app-form-videogames',
@@ -27,7 +28,7 @@ export class FormVideogamesComponent implements OnInit {
     coverImage: new FormControl()
   });
 
-  videogames$!: Observable<Videogame[]>;
+  videogames$!: Observable<Videogioco[]>;
 
   constructor(private videogiochiService: VideogiochiService,
               private route: ActivatedRoute) {}
