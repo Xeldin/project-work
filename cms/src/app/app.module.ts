@@ -12,7 +12,8 @@ import { ModificaComponent } from './modifica/modifica.component';
 import { LoginComponent } from './login/login.component';
 import { PannelloModeratoriComponent } from './pannello-moderatori/pannello-moderatori.component';
 import { HeaderComponent } from './header/header.component';
-
+import { FormNewsComponent } from './News/form-news/form-news.component';
+import { ListaNewsComponent } from './News/lista-news/lista-news.component';
 
 @NgModule({
   declarations: [
@@ -24,17 +25,12 @@ import { HeaderComponent } from './header/header.component';
     ModificaComponent,
     LoginComponent,
     PannelloModeratoriComponent,
-    HeaderComponent
-  
-   
-
+    HeaderComponent,
+    FormNewsComponent,
+    ListaNewsComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-  ],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

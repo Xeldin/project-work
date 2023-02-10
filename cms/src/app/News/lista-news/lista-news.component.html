@@ -1,0 +1,20 @@
+<div class="lista-news">
+  <h1>NEWS</h1>
+  <div class="dettaglio-news" *ngFor="let n of news">
+    <h2>{{ n.title }}</h2>
+    <p>Categoria: {{ n.category }}</p>
+    <p>Url dell'immagine: {{ n.imageUrl }}</p>
+    <p>Contenuto: {{ n.content }}</p>
+    <p>Data di pubblicazione: {{ n.publicationDate }}</p>
+    <p>Autore: {{ n.authorName }}</p>
+    <p *ngFor="let t of n.tags">Tag: {{ t }}</p>
+    <div>
+      <img [src]="n.imageUrl" />
+    </div>
+    <p>Id: {{ n._id }}</p>
+  </div>
+  <div>
+    <button [routerLink]="['formNews', ['_id']]">MODIFICA</button>
+    <button type="button" (click)="onClickElimina('_id')">ELIMINA</button>
+  </div>
+</div>

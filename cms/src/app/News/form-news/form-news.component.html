@@ -1,0 +1,30 @@
+<form class="formNews">
+  <input type="text" placeholder="Titolo" formControlName="title" />
+  <input type="text" placeholder="Categoria" formControlName="category" />
+  <input
+    type="text"
+    placeholder="Url dell'immagine"
+    formControlName="imageUrl"
+  />
+  <input type="textarea" placeholder="Contenuto" formControlName="content" />
+  <input
+    type="text"
+    placeholder="Data di pubblicazione aaaa-mm-gg"
+    formControlName="publicationDate"
+  />
+  <input type="text" placeholder="Autore" formControlName="authorName" />
+  <p>Tags</p>
+  <div formArrayName="tags">
+    <button type="button" (click)="onClickAddTag()">+</button>
+    <div *ngFor="let _ of tagsFormArray.controls; let i = index">
+      <input type="text" [placeholder]="tag" />
+      <button type="button" (click)="onRemoveTag(i)">-</button>
+    </div>
+  </div>
+  <div id="salvaModifiche" *ngIf="isEditMode; else elseBlock">
+    <button type="submit" (click)="salvaModifiche()">SALVA MODIFICHE</button>
+  </div>
+  <ng-template #elseBlock>
+    <button type="submit" (click)="onClickAggiungi()">AGGIUNGI NEWS</button>
+  </ng-template>
+</form>
