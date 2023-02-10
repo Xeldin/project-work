@@ -39,8 +39,8 @@ export class FormVideogamesComponent implements OnInit {
       this.videogiochiService.createVideogioco(this.form.value);
     }
 
-    onClickElimina(id:string){
-      this.videogiochiService.deleteVideogioco(id).subscribe(()=>{
+    onClickElimina(_id:string){
+      this.videogiochiService.deleteVideogioco(_id).subscribe(()=>{
         this.videogames$=this.videogiochiService.getVideogiochi();
       });
     }
@@ -81,19 +81,19 @@ export class FormVideogamesComponent implements OnInit {
     if(videogiocoDaModificare){
       this.isEditMode=true;
       this.form=new FormGroup({
-        title: new FormControl(videogiocoDaModificare.title),
-        releaseDate: new FormControl(videogiocoDaModificare.releaseDate),
-        genre: new FormControl(videogiocoDaModificare.genre),
-        softwareHouse: new FormControl(videogiocoDaModificare.softwareHouse),
-        publisher: new FormControl(videogiocoDaModificare.publisher),
-        numberOfPlayers: new FormControl(videogiocoDaModificare.numberOfPlayers),
+        title: new FormControl(videogiocoDaModificare.subscribe(this.form.value.title)),
+        releaseDate: new FormControl(videogiocoDaModificare.subscribe(this.form.value.releaseDate)),
+        genre: new FormControl(videogiocoDaModificare.subscribe(this.form.value.genre)),
+        softwareHouse: new FormControl(videogiocoDaModificare.subscribe(this.form.value.softwareHouse)),
+        publisher: new FormControl(videogiocoDaModificare.subscribe(this.form.value.publisher)),
+        numberOfPlayers: new FormControl(videogiocoDaModificare.subscribe(this.form.value.genre.numberOfPlayers)),
         languages: new FormArray([
           new FormGroup({
-            voice: new FormArray([new FormControl(videogiocoDaModificare.languages.voice)]),
-            text: new FormArray([new FormControl(videogiocoDaModificare.languages.text)])
+            voice: new FormArray([new FormControl(videogiocoDaModificare.subscribe(this.form.value.languages.voice))]),
+            text: new FormArray([new FormControl(videogiocoDaModificare.subscribe(this.form.value.languages.text))])
           })
         ]),
-        coverImage: new FormControl(videogiocoDaModificare.coverImage)
+        coverImage: new FormControl(videogiocoDaModificare.subscribe(this.form.value.coverImage))
       })
     };
   }

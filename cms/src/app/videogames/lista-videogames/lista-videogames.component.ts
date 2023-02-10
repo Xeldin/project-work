@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { Videogioco } from 'src/app/model/videogioco';
 import { VideogiochiService } from 'src/app/service/videogiochi.service';
+
 
 @Component({
   selector: 'app-lista-videogames',
@@ -9,12 +9,19 @@ import { VideogiochiService } from 'src/app/service/videogiochi.service';
   styleUrls: ['./lista-videogames.component.css']
 })
 export class ListaVideogamesComponent implements OnInit {
-  videogames$!: Observable<Videogioco[]>;
+  videogiochi!: Videogioco[];
 
   constructor (private videogiochiService: VideogiochiService){}
 
   ngOnInit(): void {
-    this.videogames$= this.videogiochiService.getVideogioco();
+    this.videogiochiService.getVideogiochi().subscribe((videogiochi:Videogioco[])=>{
+      this.videogiochi=videogiochi;
+    })
+  }
+
+  onClickElimina(_id:string){
+    this.videogiochiService.deleteVideogioco(_id);
   }
 
 }
+
