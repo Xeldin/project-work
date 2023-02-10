@@ -17,12 +17,9 @@ export class AdminGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    // I guard possono anche restituire direttamente gli observable
-    // e le logiche di come permette l'accesso rimarranno identiche
-    // solo che si baserà su un valore asincrono che verrà gestito direttamente dal guard
+
     return this.authService.isAdmin$;
-    // Notiamo che al guard basta anche solo l'observable per gestire i permessi di passaggio
-    // se l'observable emette valori false, non passa, altrimenti sì.
+
   }
 }
 
