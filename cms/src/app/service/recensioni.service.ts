@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { Recensione } from 'src/app/model/recensione';
 
 @Injectable({ providedIn: 'root'})
-export class RecensioneService {
+export class RecensioniService {
 	private apiUrl = 'https://project-works-rest-api.onrender.com/api/v1/GROUP-IV/review'
 
 	constructor(private http: HttpClient) {}
