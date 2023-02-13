@@ -7,9 +7,18 @@
             <p>Casa produttrice: {{v.softwareHouse}}</p>
             <p>Pubblicato da {{v.publisher}}</p>
             <p>Numero giocatori: {{v.numberOfPlayers}}</p>
-            <p *ngFor="let l of v.languages">
-                Lingua doppiaggio: {{l.voice}} <br>
-                Lingua sottotitoli: {{l.text}}</p>
+            <div *ngFor="let l of v.languages">
+                        <ul >
+                            <li *ngFor="let voce of l.voice">
+                                Lingua doppiaggio: {{voce}}
+                            </li>
+                        </ul>
+                        <ul >
+                            <li *ngFor="let text of l.text">
+                                Lingua sottotitoli: {{text}}
+                            </li>
+                        </ul>
+            </div>    
             <div class="img-videogame">
                 <img [src]="v.coverImage">
             </div>

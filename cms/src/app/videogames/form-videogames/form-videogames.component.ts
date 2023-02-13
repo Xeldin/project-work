@@ -11,27 +11,28 @@ import { VideogiochiService } from 'src/app/service/videogiochi.service';
   templateUrl: './form-videogames.component.html',
   styleUrls: ['./form-videogames.component.css']
 })
-export class FormVideogamesComponent implements OnInit {
+export class FormVideogamesComponent {
   form: FormGroup = new FormGroup({
     title: new FormControl(Validators.required),
-    releaseDate: new FormControl(),
-    genre: new FormControl(),
-    softwareHouse: new FormControl(),
-    publisher: new FormControl(),
-    numberOfPlayers: new FormControl(),
+    releaseDate: new FormControl(Validators.required),
+    genre: new FormControl(Validators.required),
+    softwareHouse: new FormControl(Validators.required),
+    publisher: new FormControl(Validators.required),
+    numberOfPlayers: new FormControl(Validators.required),
     languages: new FormArray([
       new FormGroup({
-        voice: new FormArray([new FormControl()]),
-        text: new FormArray([new FormControl()])
+        voice: new FormArray([new FormControl(Validators.required)]),
+        text: new FormArray([new FormControl(Validators.required)])
       })
     ]),
-    coverImage: new FormControl()
+    coverImage: new FormControl(Validators.required)
   });
 
   videogames$!: Observable<Videogioco[]>;
 
   constructor(private videogiochiService: VideogiochiService,
               private route: ActivatedRoute) {}
+
 
  
 
@@ -76,27 +77,27 @@ export class FormVideogamesComponent implements OnInit {
     isEditMode=false;
     idModifica=-1;
     
-    ngOnInit(): void {
-    const videogiocoDaModificare = this. videogiochiService.getVideogioco(this.route.snapshot.paramMap.get('id')!);
-    if(videogiocoDaModificare){
-      this.isEditMode=true;
-      this.form=new FormGroup({
-        title: new FormControl(videogiocoDaModificare.subscribe(this.form.value.title)),
-        releaseDate: new FormControl(videogiocoDaModificare.subscribe(this.form.value.releaseDate)),
-        genre: new FormControl(videogiocoDaModificare.subscribe(this.form.value.genre)),
-        softwareHouse: new FormControl(videogiocoDaModificare.subscribe(this.form.value.softwareHouse)),
-        publisher: new FormControl(videogiocoDaModificare.subscribe(this.form.value.publisher)),
-        numberOfPlayers: new FormControl(videogiocoDaModificare.subscribe(this.form.value.genre.numberOfPlayers)),
-        languages: new FormArray([
-          new FormGroup({
-            voice: new FormArray([new FormControl(videogiocoDaModificare.subscribe(this.form.value.languages.voice))]),
-            text: new FormArray([new FormControl(videogiocoDaModificare.subscribe(this.form.value.languages.text))])
-          })
-        ]),
-        coverImage: new FormControl(videogiocoDaModificare.subscribe(this.form.value.coverImage))
-      })
-    };
-  }
+    // ngOnInit(): void {
+    // const videogiocoDaModificare = this. videogiochiService.getVideogioco(this.route.snapshot.paramMap.get('id')!);
+    // if(videogiocoDaModificare){
+    //   this.isEditMode=true;
+    //   this.form=new FormGroup({
+    //     title: new FormControl(videogiocoDaModificare.subscribe(this.form.value.title => title)),
+    //     releaseDate: new FormControl(videogiocoDaModificare.subscribe(this.form.value.releaseDate)),
+    //     genre: new FormControl(videogiocoDaModificare.subscribe(this.form.value.genre)),
+    //     softwareHouse: new FormControl(videogiocoDaModificare.subscribe(this.form.value.softwareHouse)),
+    //     publisher: new FormControl(videogiocoDaModificare.subscribe(this.form.value.publisher)),
+    //     numberOfPlayers: new FormControl(videogiocoDaModificare.subscribe(this.form.value.genre.numberOfPlayers)),
+    //     languages: new FormArray([
+    //       new FormGroup({
+    //         voice: new FormArray([new FormControl(videogiocoDaModificare.subscribe(this.form.value.languages.voice))]),
+    //         text: new FormArray([new FormControl(videogiocoDaModificare.subscribe(this.form.value.languages.text))])
+    //       })
+    //     ]),
+    //     coverImage: new FormControl(videogiocoDaModificare.subscribe(this.form.value.coverImage))
+    //   })
+    // };
+  //}
 
   onClickSalvaModifiche(){
     this.videogiochiService.createVideogioco(this.form.value);
