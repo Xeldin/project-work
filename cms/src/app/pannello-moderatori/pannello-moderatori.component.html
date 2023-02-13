@@ -1,0 +1,18 @@
+<ul>
+    <li *ngFor="let u of users; let i=index">
+        {{u.username}}
+        <button *ngIf="deleteCheck(u)" (click)="delete(u.id)">Elimina</button>
+        <button *ngIf="changeCheck()" (click)="toggleChange(u.id)">Modifica</button>
+    </li>
+</ul>
+<form  *ngIf="change"  [formGroup]="form" (ngSubmit)="onChange()">
+    <div>
+        Seleziona la tipologia di utente:
+        <select  formControlName="newRuolo">
+            <option ngValue="user">Utente</option>
+            <option ngValue="moderatore">Moderatore</option>
+            <option ngValue="admin">Admin</option>
+        </select>
+    </div>
+    <button type="submit">Modifica</button>
+</form>
