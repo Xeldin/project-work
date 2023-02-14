@@ -6,7 +6,7 @@ export interface Videogioco {
     softwareHouse: string;
     publisher: string;
     numberOfPlayers: number;
-    languages: Language[];
+    languages: Language;
     __v: number;
     coverImage: string;
 }

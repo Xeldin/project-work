@@ -13,19 +13,19 @@ export class VideogiochiService {
 		return this.http.get<Videogioco[]>(this.apiUrl);
 	}
 
-	getVideogioco(id: string): Observable<Videogioco> {
-		return this.http.get<Videogioco>(this.apiUrl + '/' + id);
+	getVideogioco(_id: string): Observable<Videogioco> {
+		return this.http.get<Videogioco>(this.apiUrl + '/' + _id);
 	}
 
-	createVideogioco(videogioco: Omit<Videogioco, "id">): Observable<Videogioco> {
+	createVideogioco(videogioco: Omit<Videogioco, "_id">): Observable<Videogioco> {
 		return this.http.post<Videogioco>(this.apiUrl, videogioco);
 	}
 
-	updateVideogioco(id: string, videogioco: Omit<Videogioco, "id">): Observable<Videogioco> {
-		return this.http.put<Videogioco>(this.apiUrl + '/' + id, videogioco);
+	updateVideogioco(_id: string, videogioco: Omit<Videogioco, "_id">): Observable<Videogioco> {
+		return this.http.put<Videogioco>(this.apiUrl + '/' + _id, videogioco);
 	}
 
-	deleteVideogioco(id: string): Observable<void> {
-		return this.http.delete<void>(this.apiUrl + '/' + id);
+	deleteVideogioco(_id: string): Observable<void> {
+		return this.http.delete<void>(this.apiUrl + '/' + _id);
 	}
 }

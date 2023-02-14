@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Videogioco} from 'src/app/model/videogioco';
+import { Videogioco } from 'src/app/model/videogioco';
 import { VideogiochiService } from 'src/app/service/videogiochi.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { VideogiochiService } from 'src/app/service/videogiochi.service';
   templateUrl: './form-videogames.component.html',
   styleUrls: ['./form-videogames.component.css']
 })
-export class FormVideogamesComponent {
+export class FormVideogamesComponent implements OnInit {
   form: FormGroup = new FormGroup({
     title: new FormControl(Validators.required),
     releaseDate: new FormControl(Validators.required),
@@ -31,75 +31,75 @@ export class FormVideogamesComponent {
   videogames$!: Observable<Videogioco[]>;
 
   constructor(private videogiochiService: VideogiochiService,
-              private route: ActivatedRoute) {}
+    private route: ActivatedRoute) { }
 
 
- 
 
-  onClickAggiungi(){
-      this.videogiochiService.createVideogioco(this.form.value);
-    }
 
-    onClickElimina(_id:string){
-      this.videogiochiService.deleteVideogioco(_id).subscribe(()=>{
-        this.videogames$=this.videogiochiService.getVideogiochi();
-      });
-    }
+  onClickAggiungi() {
+    this.videogiochiService.createVideogioco(this.form.value);
+  }
 
-    get voiceFormArray(){
-      return this.form.get('voice') as FormArray;
-    }
+  onClickElimina(_id: string) {
+    this.videogiochiService.deleteVideogioco(_id).subscribe(() => {
+      this.videogames$ = this.videogiochiService.getVideogiochi();
+    });
+  }
 
-    get textFormArray(){
-      return this.form.get('text') as FormArray;
-    }
+  get voiceFormArray() {
+    return this.form.get('language.voice') as FormArray;
+  }
 
-    get languageFormGroup(){
-      return this.form.get('languages') as FormArray;
-    }
+  get textFormArray() {
+    return this.form.get('language.text') as FormArray;
+  }
 
-    onClickAddVoice(){
-      this.voiceFormArray.push(new FormControl());
-    }
+  get languageFormGroup() {
+    return this.form.get('languages') as FormArray;
+  }
 
-    onClickAddText(){
-      this.textFormArray.push(new FormControl());
-    }
+  onClickAddVoice() {
+    this.voiceFormArray.push(new FormControl());
+  }
 
-    onRemoveVoice(index: number){
-      this.voiceFormArray.removeAt(index);
-    }
+  onClickAddText() {
+    this.textFormArray.push(new FormControl());
+  }
 
-    onRemoveText(index: number){
-      this.textFormArray.removeAt(index);
-    } 
-    
-    isEditMode=false;
-    idModifica=-1;
-    
-    // ngOnInit(): void {
-    // const videogiocoDaModificare = this. videogiochiService.getVideogioco(this.route.snapshot.paramMap.get('id')!);
-    // if(videogiocoDaModificare){
-    //   this.isEditMode=true;
-    //   this.form=new FormGroup({
-    //     title: new FormControl(videogiocoDaModificare.subscribe(this.form.value.title => title)),
-    //     releaseDate: new FormControl(videogiocoDaModificare.subscribe(this.form.value.releaseDate)),
-    //     genre: new FormControl(videogiocoDaModificare.subscribe(this.form.value.genre)),
-    //     softwareHouse: new FormControl(videogiocoDaModificare.subscribe(this.form.value.softwareHouse)),
-    //     publisher: new FormControl(videogiocoDaModificare.subscribe(this.form.value.publisher)),
-    //     numberOfPlayers: new FormControl(videogiocoDaModificare.subscribe(this.form.value.genre.numberOfPlayers)),
-    //     languages: new FormArray([
-    //       new FormGroup({
-    //         voice: new FormArray([new FormControl(videogiocoDaModificare.subscribe(this.form.value.languages.voice))]),
-    //         text: new FormArray([new FormControl(videogiocoDaModificare.subscribe(this.form.value.languages.text))])
-    //       })
-    //     ]),
-    //     coverImage: new FormControl(videogiocoDaModificare.subscribe(this.form.value.coverImage))
-    //   })
-    // };
-  //}
+  onRemoveVoice(index: number) {
+    this.voiceFormArray.removeAt(index);
+  }
 
-  onClickSalvaModifiche(){
+  onRemoveText(index: number) {
+    this.textFormArray.removeAt(index);
+  }
+
+  isEditMode = false;
+  idModifica = -1;
+
+  ngOnInit(): void {
+    const videogiocoDaModificare = this.videogiochiService.getVideogioco(this.route.snapshot.paramMap.get('_id')!);
+    if (videogiocoDaModificare) {
+      this.isEditMode = true;
+      this.form = new FormGroup({
+        title: new FormControl(videogiocoDaModificare.subscribe(this.form.value.title)),
+        releaseDate: new FormControl(videogiocoDaModificare.subscribe(this.form.value.releaseDate)),
+        genre: new FormControl(videogiocoDaModificare.subscribe(this.form.value.genre)),
+        softwareHouse: new FormControl(videogiocoDaModificare.subscribe(this.form.value.softwareHouse)),
+        publisher: new FormControl(videogiocoDaModificare.subscribe(this.form.value.publisher)),
+        numberOfPlayers: new FormControl(videogiocoDaModificare.subscribe(this.form.value.genre.numberOfPlayers)),
+        languages: new FormArray([
+          new FormGroup({
+            voice: new FormArray([new FormControl(videogiocoDaModificare.subscribe(this.form.value.languages.voice))]),
+            text: new FormArray([new FormControl(videogiocoDaModificare.subscribe(this.form.value.languages.text))])
+          })
+        ]),
+        coverImage: new FormControl(videogiocoDaModificare.subscribe(this.form.value.coverImage))
+      })
+    };
+  }
+
+  onClickSalvaModifiche() {
     this.videogiochiService.createVideogioco(this.form.value);
   }
 
