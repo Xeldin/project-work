@@ -9,7 +9,7 @@
 }
 
 .image {
-  width: 20rem;
+  width: 15rem;
   height: min-content;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -19,6 +19,7 @@
   font-family: fantasy;
   font-weight: 300;
   font-size: 2rem;
+  text-align: center;
 }
 
 .author {
