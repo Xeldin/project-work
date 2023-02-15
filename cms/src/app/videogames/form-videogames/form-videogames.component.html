@@ -1,4 +1,5 @@
-<form [routerLink] class="formVideogame">
+<form formGroup="form" (ngSubmit)="onClickAggiungi()">
+    <h4>VIDEOGAME</h4>
     <input type="text" placeholder="Titolo" formControlName="title">
     <input type="text" placeholder="Data rilascio aaaa-mm-gg" formControlName="releaseDate">
     <input type="text" placeholder="Genere" formControlName="genre">
@@ -10,22 +11,27 @@
         <div formArrayName="voice">
             <input type="text" placeholder="eng">
             <button type="button" (click)="onClickAddVoice()">+</button>
-            <button *ngFor="let _ of voiceFormArray.controls; let i=index" type="button" (click)="onRemoveVoice(i)">-</button>
+            <button *ngFor="let _ of voiceFormArray?.controls; let i=index" type="button" (click)="onRemoveVoice(i)">-</button>
         </div>
         <p>Lingua sottotitoli</p>
         <div formArrayName="text">
             <input type="text"  placeholder="ita">
             <button type="button" (click)="onClickAddText()">+</button>
-            <button *ngFor="let _ of voiceFormArray.controls; let i=index" type="button" (click)="onRemoveText(i)">-</button>
+            <button *ngFor="let _ of voiceFormArray?.controls; let i=index" type="button" (click)="onRemoveText(i)">-</button>
         </div>
     </div>
-    <div class="salva">
-        <button type="button" (click)="onClickAggiungi()">SALVA</button>
+    <div>
+        <h5>Immagine</h5>
+        <input type="text" placeholder="URL immagine">
     </div>
+    <div class="salva">
+        <button type="submit">SALVA</button>
+    </div>
+</form>
     <!-- <div id="salvaModifiche" *ngIf="isEditMode; else elseBlock">
         <button type="submit" (click)="onClickSalvaModifiche()">SALVA MODIFICHE</button>
     </div>
     <ng-template #elseBlock>
         <button type="submit" (click)="onClickAggiungi()">AGGIUNGI VIDEOGAME</button>
     </ng-template> -->
-</form>
+

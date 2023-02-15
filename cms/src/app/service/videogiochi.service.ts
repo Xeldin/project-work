@@ -9,7 +9,7 @@ export class VideogiochiService {
 
 	constructor(private http: HttpClient) {}
 
-	getVideogiochi(): Observable<Videogioco[]> {
+	getVideogiochi(): Observable<any> {
 		return this.http.get<Videogioco[]>(this.apiUrl);
 	}
 
@@ -17,11 +17,11 @@ export class VideogiochiService {
 		return this.http.get<Videogioco>(this.apiUrl + '/' + _id);
 	}
 
-	createVideogioco(videogioco: Omit<Videogioco, "_id">): Observable<Videogioco> {
-		return this.http.post<Videogioco>(this.apiUrl, videogioco);
+	createVideogioco(videogioco: Videogioco): Observable<any> {
+		return this.http.post(this.apiUrl, videogioco);
 	}
 
-	updateVideogioco(_id: string, videogioco: Omit<Videogioco, "_id">): Observable<Videogioco> {
+	updateVideogioco(_id: string, videogioco: Omit<Videogioco, "_id"|"__v">): Observable<Videogioco> {
 		return this.http.put<Videogioco>(this.apiUrl + '/' + _id, videogioco);
 	}
 

@@ -11,6 +11,10 @@ const routes: Routes = [
   {
     path: 'formVideogame',
     component: FormVideogamesComponent
+  },
+  {
+    path: 'formVideogame/:_id',
+    component: FormVideogamesComponent
   }
 ];
 
