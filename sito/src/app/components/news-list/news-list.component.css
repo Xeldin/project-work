@@ -10,6 +10,7 @@
 
 .image {
   width: 20rem;
+  height: min-content;
   padding-left: 2rem;
   padding-right: 2rem;
 }

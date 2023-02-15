@@ -1,5 +1,9 @@
 <div class="all">
-  <div *ngFor="let r of review" class="reviews">
+  <div
+    *ngFor="let r of review"
+    class="reviews"
+    [ngStyle]="{ color: color(r.score) }"
+  >
     <p>{{ r.title }} secondo {{ r.reviewerName }}: Voto - {{ r.score }}</p>
   </div>
 </div>

@@ -17,4 +17,15 @@ export class ReviewsListComponent implements OnInit {
       .getReview()
       .subscribe((review) => (this.review = review));
   }
+
+  color(score: number) {
+    let colore: string;
+    if (score <= 3) {
+      return (colore = 'red');
+    } else if (score >= 7) {
+      return (colore = 'green');
+    } else {
+      return (colore = 'yellow');
+    }
+  }
 }
