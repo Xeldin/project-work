@@ -18,6 +18,7 @@
 .search {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .search input[type="search"] {
