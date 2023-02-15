@@ -1,0 +1,28 @@
+.all {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.news {
+  display: flex;
+}
+
+.image {
+  width: 20rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.title {
+  font-family: fantasy;
+  font-weight: 300;
+  font-size: 2rem;
+}
+
+.author {
+  font-family: fantasy;
+  font-weight: 100;
+  font-size: 1rem;
+  text-align: center;
+}

@@ -1,0 +1,12 @@
+.all {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  text-align: center;
+}
+
+.reviews {
+  font-family: fantasy;
+  font-weight: 300;
+  font-size: 2rem;
+}
