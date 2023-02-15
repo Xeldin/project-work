@@ -73,11 +73,12 @@ export class FormVideogamesComponent implements OnInit {
     this.textFormArray.removeAt(index);
   }
 
-  isEditMode = false;
-  idModifica = -1;
+  // _id='';
+  // isEditMode = false;
+  // idModifica = -1;
 
   ngOnInit(): void {
-    // this._id=this.route.snapshot.params['_id'];
+  //   this._id=this.route.snapshot.params['_id'];
 
   //   const videogiocoDaModificare = this.videogiochiService.getVideogioco(this.route.snapshot.paramMap.get(this._id)!)
   //   if (videogiocoDaModificare) {
@@ -96,7 +97,7 @@ export class FormVideogamesComponent implements OnInit {
   //       coverImage: new FormControl(videogiocoDaModificare.subscribe(this.form.value.coverImage))
   //     })
   //   };
-  }
+   }
 
   onClickSalvaModifiche() {
     this.videogiochiService.createVideogioco(this.form.value);

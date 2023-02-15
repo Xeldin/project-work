@@ -7,33 +7,31 @@
     <input type="text" placeholder="Prodotto da" formControlName="softwareHouse">
     <input type="text" placeholder="Pubblicato da" formControlName="publisher">
     <input type="number" placeholder="Numero giocatori" formControlName="numberOfPlayers">
-    <div formArrayName="languages">
-    <p>Lingua doppiaggio</p>
-        <div formArrayName="voice">
-            <input type="text" placeholder="eng">
+    <div formGroupName="languages">
+        <p>Lingua doppiaggio</p>
+        <div formArrayName="voice" *ngFor="let voce of voiceFormArray.controls; let i=index">
+            <input type="text" [formControlName]="i" placeholder="eng" formControlName="voice">
             <button type="button" (click)="onClickAddVoice()">+</button>
-            <button *ngFor="let _ of voiceFormArray.controls; let i=index" type="button" (click)="onRemoveVoice(i)">-</button>
+            <button type="button" (click)="onRemoveVoice(i)">-</button>
         </div>
         <p>Lingua sottotitoli</p>
-        <div formArrayName="text">
+        <div formArrayName="text" *ngFor="let testo of textFormArray.controls; let i=index">
+            <input type="text" [formControlName]="i" placeholder="ita" formControlName="text">
             <button type="button" (click)="onClickAddText()">+</button>
-            <input type="text"  placeholder="ita">
-            
-            <button *ngFor="let _ of voiceFormArray.controls; let i=index" type="button" (click)="onRemoveText(i)">-</button>
+            <button type="button" (click)="onRemoveText(i)">-</button>
         </div>
     </div>
     <div>
         <h5>Immagine</h5>
-        <input type="text" placeholder="URL immagine">
+        <input type="text" placeholder="URL immagine" formControlName="coverImage">
     </div>
     <div class="salva">
         <button type="submit">SALVA</button>
     </div>
 </form>
-    <!-- <div id="salvaModifiche" *ngIf="isEditMode; else elseBlock">
+<!-- <div id="salvaModifiche" *ngIf="isEditMode; else elseBlock">
         <button type="submit" (click)="onClickSalvaModifiche()">SALVA MODIFICHE</button>
     </div>
     <ng-template #elseBlock>
         <button type="submit" (click)="onClickAggiungi()">AGGIUNGI VIDEOGAME</button>
     </ng-template> -->
-
