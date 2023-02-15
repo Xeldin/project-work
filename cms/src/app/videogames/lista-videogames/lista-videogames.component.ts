@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Videogioco } from 'src/app/model/videogioco';
 import { VideogiochiService } from 'src/app/service/videogiochi.service';
 
@@ -10,6 +11,7 @@ import { VideogiochiService } from 'src/app/service/videogiochi.service';
 })
 export class ListaVideogamesComponent implements OnInit {
   videogiochi!: Videogioco[];
+  videogames$!: Observable<Videogioco[]>;
 
   constructor (private videogiochiService: VideogiochiService){}
 
@@ -19,9 +21,9 @@ export class ListaVideogamesComponent implements OnInit {
     })
   }
 
-  onClickElimina(_id:string){
-    this.videogiochiService.deleteVideogioco(_id);
+  onClickElimina(_id: string) {
+    this.videogiochiService.deleteVideogioco(_id).subscribe(() => {
+      this.videogames$ = this.videogiochiService.getVideogiochi();
+    });
   }
-
 }
-

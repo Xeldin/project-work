@@ -1,6 +1,7 @@
-<form formGroup="form" (ngSubmit)="onClickAggiungi()">
+<form [formGroup]="form" (ngSubmit)="onClickAggiungi()">
     <h4>VIDEOGAME</h4>
     <input type="text" placeholder="Titolo" formControlName="title">
+    <input type="text" placeholder="Categoria" formControlName="category">
     <input type="text" placeholder="Data rilascio aaaa-mm-gg" formControlName="releaseDate">
     <input type="text" placeholder="Genere" formControlName="genre">
     <input type="text" placeholder="Prodotto da" formControlName="softwareHouse">
@@ -11,13 +12,14 @@
         <div formArrayName="voice">
             <input type="text" placeholder="eng">
             <button type="button" (click)="onClickAddVoice()">+</button>
-            <button *ngFor="let _ of voiceFormArray?.controls; let i=index" type="button" (click)="onRemoveVoice(i)">-</button>
+            <button *ngFor="let _ of voiceFormArray.controls; let i=index" type="button" (click)="onRemoveVoice(i)">-</button>
         </div>
         <p>Lingua sottotitoli</p>
         <div formArrayName="text">
-            <input type="text"  placeholder="ita">
             <button type="button" (click)="onClickAddText()">+</button>
-            <button *ngFor="let _ of voiceFormArray?.controls; let i=index" type="button" (click)="onRemoveText(i)">-</button>
+            <input type="text"  placeholder="ita">
+            
+            <button *ngFor="let _ of voiceFormArray.controls; let i=index" type="button" (click)="onRemoveText(i)">-</button>
         </div>
     </div>
     <div>

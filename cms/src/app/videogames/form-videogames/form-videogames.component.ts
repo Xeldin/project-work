@@ -15,6 +15,7 @@ export class FormVideogamesComponent implements OnInit {
 
   form: FormGroup = new FormGroup({
     title: new FormControl('',Validators.required),
+    category: new FormControl('',Validators.required),
     releaseDate: new FormControl('',Validators.required),
     genre: new FormControl('',Validators.required),
     softwareHouse: new FormControl('',Validators.required),
@@ -27,46 +28,29 @@ export class FormVideogamesComponent implements OnInit {
     coverImage: new FormControl('',Validators.required)
   });
 
-  // _id='';
-  videogames$?: Observable<Videogioco[]>;
+  videogames$!: Observable<Videogioco[]>;
 
   constructor(private videogiochiService: VideogiochiService,
     private route: ActivatedRoute) { }
 
   onClickAggiungi() {
-    // this.videogiochiService.createVideogioco(this.form.value);
-  //   const newVideogioco ={
-  //     title: this.form.value.title,
-  //       releaseDate: this.form.value.releaseDate,
-  //       genre: this.form.value.genre,
-  //       softwareHouse:this.form.value.softwareHouse,
-  //       publisher: this.form.value.publisher,
-  //       numberOfPlayers: this.form.value.numberOfPlayers,
-  //       languages: {
-  //         voice: this.form.value.language.voice,
-  //         text:this.form.value.languages.text
-  //       },
-  //       coverImage: this.form.value.coverImage
-  //       };
-      
-    
     this.videogiochiService.createVideogioco(this.form.value).subscribe(()=>{
       this.videogames$=this.videogiochiService.getVideogiochi();
     });
   }
 
-  onClickElimina(_id: string) {
-    this.videogiochiService.deleteVideogioco(_id).subscribe(() => {
+  onClickElimina(id: string) {
+    this.videogiochiService.deleteVideogioco(id).subscribe(() => {
       this.videogames$ = this.videogiochiService.getVideogiochi();
     });
   }
 
   get voiceFormArray() {
-    return this.form.get('language.voice') as FormArray;
+    return this.languageFormGroup.get('voice') as FormArray;
   }
 
   get textFormArray() {
-    return this.form.get('language.text') as FormArray;
+    return this.languageFormGroup.get('text') as FormArray;
   }
 
   get languageFormGroup() {

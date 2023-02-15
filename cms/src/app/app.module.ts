@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ListaVideogamesComponent } from 'src/app/videogames/lista-videogames/lista-videogames.component';
 import { FormVideogamesComponent } from 'src/app/videogames/form-videogames/form-videogames.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
