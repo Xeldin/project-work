@@ -1,7 +1,7 @@
 .container {
   background-color: #0d7a0d;
   color: #fff;
-  height: 10rem;
+  height: 5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -21,7 +21,7 @@
 }
 
 .image {
-  height: 10rem;
+  height: 5rem;
   width: auto;
 }
 

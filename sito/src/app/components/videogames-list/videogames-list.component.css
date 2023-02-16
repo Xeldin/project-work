@@ -4,22 +4,28 @@
   gap: 2rem;
 }
 
+.card-list {
+  color: white;
+  background-color: #333;
+  height: 100px;
+}
+
 .videogames {
   display: flex;
 }
 
 a {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 a:hover {
-  background-color: lightgray;
+  background-color: darkgray;
 }
 
 .image {
-  width: 15rem;
-  height: min-content;
+  width: auto;
+  height: 100px;
   padding-left: 2rem;
   padding-right: 2rem;
 }
