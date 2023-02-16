@@ -2,7 +2,7 @@
 <div class="lista-videogames">
     <h1>VIDEOGIOCHI</h1>
     <button [routerLink]="['formVideogame']">AGGIUNGI VIDEOGAME</button>
-    <div class="dettaglio-videogames" *ngFor="let v of videogames$ |async">
+    <div class="card" *ngFor="let v of videogames$ |async">
         <h2>{{v.title}}</h2>
             <p>Categoria: {{v.category}}</p>
             <p>Data di uscita: {{v.releaseDate | date}}</p>
@@ -11,6 +11,7 @@
             <p>Pubblicato da {{v.publisher}}</p>
             <p>Numero giocatori: {{v.numberOfPlayers}}</p>
             <h4>Lingua doppiaggio:</h4>
+            <div class="language">
             <div *ngFor="let voice of v.languages.voice">
                 <ul>
                     <li>{{voice}}</li>
@@ -21,6 +22,7 @@
                 <ul>
                     <li>{{text}}</li>
                 </ul>
+            </div>
             </div>
             <div class="img-videogame" *ngIf="v.coverImage">
                 <img [src]="v.coverImage" alt="immagine" class="img">

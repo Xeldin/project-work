@@ -1,37 +1,36 @@
 <app-nav-bar></app-nav-bar>
 <div>
-<form [formGroup]="form" (ngSubmit)="onSubmit()" class="cardForm">
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="card">
   <h4>AGGIUNGI RECENSIONE</h4>
+  <label>Titolo <br></label>
   <input id="title" placeholder="titolo" type="text" formControlName="title"> <br>
-  <label>Data Pubblicazione: </label>
+  <label>Data Pubblicazione: <br></label>
   <input id="publicationDate" placeholder="xx/yy/xxxx" type="date" formControlName="publicationDate"> <br>
-  <label>Conenuto: </label>
+  <label>Contenuto: <br></label>
   <textarea id="content" placeholder="contenuto" type="text" formControlName="content"></textarea><br>
-  <label>Score: </label>
+  <label>Punteggio: <br></label>
   <input id="score" placeholder="score"  type="number" formControlName="score"><br>
-  <label>Recensore: </label>
   <input id="reviewerName" placeholder="recensore" type="text" formControlName="reviewerName"><br>
   <div formGroupName="reviewedGame">
-    <label>Dati gioco</label> <br>
-    <label>Id</label>
+    <label>Dati Gioco <br></label>
     <input type="text" placeholder="id"  id="id" formControlName="id">
-    <label>Name Gioco</label>
-    <input type="text" placeholder="name" id="nameGame" formControlName="name">
+    <input type="text" placeholder="name gioco" id="nameGame" formControlName="name">
   </div>
   <div formArrayName="imageUrls">
     <div *ngFor="let imageUrl of imageUrls().controls; let i = index">
       <input placeholder="https.''.jpg" [formControlName]="i" type="text">
     </div>
-    <button type="button" (click)="addImageUrl()">Add Image URL</button>
   </div>
-</form>
-</div>
-<div *ngIf="recensionedamodificare$|async; else elseBlock">
-  <button (click)="onClickSalvaModifiche()">SALVA MODIFICHE</button>
-</div>
-<ng-template #elseBlock>
-  <button (click)="onSubmit()">AGGIUNGI</button>
-</ng-template>
+  <button type="button" (click)="addImageUrl()">+ Image URL</button>
 
+  <div *ngIf="recensionedamodificare$|async; else elseBlock">
+    <button (click)="onClickSalvaModifiche()">SALVA MODIFICHE</button>
+  </div>
+  <ng-template #elseBlock>
+    <button (click)="onSubmit()">AGGIUNGI</button>
+  </ng-template>
+ </form>
+
+</div>
 
 
