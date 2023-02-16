@@ -6,7 +6,7 @@
   <label>Titolo: </label>
   <input id="title" placeholder="titolo" type="text" formControlName="title"> <br>
   <label>Data Pubblicazione: </label>
-  <input id="publicationDate" placeholder="xx/yy/xxxx" type="data" formControlName="publicationDate"> <br>
+  <input id="publicationDate" placeholder="xx/yy/xxxx" type="date" formControlName="publicationDate"> <br>
   <label>Conenuto: </label>
   <textarea id="content" placeholder="contenuto" type="text" formControlName="content"></textarea><br>
   <label>Score: </label>
@@ -18,8 +18,8 @@
     <label>Dati gioco</label> <br>
     <label>Id</label>
     <input type="text" placeholder="id"  id="id" formControlName="id">
-    <label>Name</label>
-    <input type="text" placeholder="name" id="name" formControlName="name">
+    <label>Name Gioco</label>
+    <input type="text" placeholder="name" id="nameGame" formControlName="name">
   </div>
   <div formArrayName="imageUrls">
     <div *ngFor="let imageUrl of imageUrls().controls; let i = index">
