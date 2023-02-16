@@ -31,4 +31,15 @@ export class HomeComponent implements OnInit {
       .getVideogame()
       .subscribe((videogame) => (this.videogame = videogame));
   }
+
+  color(score: number) {
+    let colore: string;
+    if (score <= 3) {
+      return (colore = 'red');
+    } else if (score >= 7) {
+      return (colore = 'green');
+    } else {
+      return (colore = 'yellow');
+    }
+  }
 }

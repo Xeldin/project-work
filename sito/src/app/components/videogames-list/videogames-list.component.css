@@ -12,6 +12,8 @@
 
 .videogames {
   display: flex;
+  text-align: right;
+  justify-content: space-between;
 }
 
 a {
@@ -34,11 +36,13 @@ a:hover {
   font-family: fantasy;
   font-weight: 300;
   font-size: 2rem;
+  margin: 0%;
 }
 
 .author {
   font-family: fantasy;
   font-weight: 100;
   font-size: 1rem;
-  text-align: center;
+  text-align: right;
+  margin: 0%;
 }

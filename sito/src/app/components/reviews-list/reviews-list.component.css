@@ -8,13 +8,32 @@
 .reviews {
   font-family: fantasy;
   font-weight: 300;
-  font-size: 2rem;
+  font-size: 1.8rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 a {
   text-decoration: none;
 }
 
-.bg:hover {
+a:hover {
   background-color: lightgray;
+}
+
+.image {
+  width: auto;
+  height: 100px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.card-list {
+  color: white;
+  background-color: #333;
+  height: 100px;
+}
+
+.margin {
+  margin: 0px;
 }

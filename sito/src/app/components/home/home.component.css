@@ -2,25 +2,46 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
+  text-align: center;
 }
 
-.news {
+.card-list {
+  color: white;
+  background-color: #333;
+  height: 100px;
+}
+
+.videogames {
   display: flex;
+  text-align: right;
+  justify-content: space-between;
+}
+
+.margin {
+  margin: 0px;
+}
+
+.reviews {
+  font-family: fantasy;
+  font-weight: 300;
+  font-size: 1.8rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 a {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 a:hover {
-  background-color: lightgray;
+  background-color: darkgray;
 }
 
 .image {
-  width: 15rem;
-  height: min-content;
-  margin-left: 2rem;
+  width: auto;
+  height: 100px;
+  padding-left: 2rem;
   padding-right: 2rem;
 }
 
@@ -28,12 +49,20 @@ a:hover {
   font-family: fantasy;
   font-weight: 300;
   font-size: 2rem;
-  text-align: center;
+  margin: 0%;
 }
 
 .author {
   font-family: fantasy;
   font-weight: 100;
   font-size: 1rem;
+  text-align: right;
+  margin: 0%;
+}
+
+.shouter {
   text-align: center;
+  font-family: fantasy;
+  font-weight: 700;
+  font-size: 3rem;
 }
