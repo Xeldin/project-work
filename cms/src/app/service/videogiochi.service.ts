@@ -21,7 +21,7 @@ export class VideogiochiService {
 		return this.http.post(this.apiUrl, videogioco);
 	}
 
-	updateVideogioco(_id: string, videogioco: Omit<Videogioco, "_id"|"__v">): Observable<Videogioco> {
+	updateVideogioco(_id: string, videogioco:Videogioco): Observable<Videogioco> {
 		return this.http.put<Videogioco>(this.apiUrl + '/' + _id, videogioco);
 	}
 

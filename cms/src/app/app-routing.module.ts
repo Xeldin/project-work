@@ -5,15 +5,15 @@ import { ListaVideogamesComponent } from './videogames/lista-videogames/lista-vi
 
 const routes: Routes = [
   {
-    path:'',
+    path:'videogames',
     component:ListaVideogamesComponent,
   },
   {
-    path: 'formVideogame',
+    path: 'videogames/formVideogame',
     component: FormVideogamesComponent
   },
   {
-    path: 'formVideogame/:_id',
+    path: 'videogames/formVideogame/:id',
     component: FormVideogamesComponent
   }
 ];

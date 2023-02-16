@@ -1,7 +1,7 @@
 <div class="lista-videogames">
     <h1>VIDEOGIOCHI</h1>
     <button [routerLink]="['formVideogame']">AGGIUNGI VIDEOGAME</button>
-    <div class="dettaglio-videogames" *ngFor="let v of videogiochi">
+    <div class="dettaglio-videogames" *ngFor="let v of videogames$ |async">
         <h2>{{v.title}}</h2>
             <p>Categoria: {{v.category}}</p>
             <p>Data di uscita: {{v.releaseDate | date}}</p>
