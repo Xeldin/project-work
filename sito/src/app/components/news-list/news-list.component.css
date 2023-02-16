@@ -4,23 +4,30 @@
   gap: 2rem;
 }
 
+.card-list {
+  color: white;
+  background-color: #333;
+  height: 100px;
+}
+
 .news {
   display: flex;
+  justify-content: space-between;
 }
 
 a {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 a:hover {
-  background-color: lightgray;
+  background-color: darkgray;
 }
 
 .image {
-  width: 15rem;
-  height: min-content;
-  margin-left: 2rem;
+  width: auto;
+  height: 100px;
+  padding-left: 2rem;
   padding-right: 2rem;
 }
 
@@ -29,6 +36,7 @@ a:hover {
   font-weight: 300;
   font-size: 2rem;
   text-align: center;
+  margin: 0%;
 }
 
 .author {
@@ -36,4 +44,5 @@ a:hover {
   font-weight: 100;
   font-size: 1rem;
   text-align: center;
+  margin: 0%;
 }
