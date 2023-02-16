@@ -1,6 +1,19 @@
-<div *ngIf="news$ | async as news">
-  <div>
-    <p>{{ news.title }}</p>
-    <p>by {{ news.authorName }}</p>
+<div *ngIf="news$ | async as news" class="all">
+  <div class="above">
+    <div>
+      <p class="title">{{ news.title }}</p>
+      <p class="author">by {{ news.authorName }}</p>
+    </div>
+    <div>
+      <p class="title">{{ news.category }}</p>
+      <p class="author">{{ news.publicationDate }}</p>
+    </div>
+  </div>
+  <img [src]="news.imageUrl" class="image" />
+  <p class="content">{{ news.content }}</p>
+  <div class="tags">
+    <div *ngFor="let t of news.tags">
+      <p>{{ t }}</p>
+    </div>
   </div>
 </div>

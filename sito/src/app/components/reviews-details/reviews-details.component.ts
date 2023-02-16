@@ -21,4 +21,15 @@ export class ReviewsDetailsComponent {
       this.review$ = this.reviewService.getSingleReview(_id);
     });
   }
+
+  color(score: number) {
+    let colore: string;
+    if (score <= 3) {
+      return (colore = 'red');
+    } else if (score >= 7) {
+      return (colore = 'green');
+    } else {
+      return (colore = 'yellow');
+    }
+  }
 }

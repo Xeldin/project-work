@@ -1,1 +1,14 @@
-<p>reviews-details works!</p>
+<div *ngIf="review$ | async as review" class="all">
+  <p class="title">{{ review.title }} secondo {{ review.reviewerName }}</p>
+  <p class="score" [ngStyle]="{ color: color(review.score) }">
+    {{ review.score }}
+  </p>
+  <div *ngFor="let i of review.imageUrls">
+    <img [src]="i" class="image" />
+  </div>
+  <p>{{ review.publicationDate }}</p>
+  <p class="content">{{ review.content }}</p>
+  <a [routerLink]="['/videogame', review.reviewedGame.id]" class="link">
+    Visita: {{ review.reviewedGame.name }}
+  </a>
+</div>
