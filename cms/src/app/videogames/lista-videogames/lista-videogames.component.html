@@ -1,0 +1,31 @@
+<div class="lista-videogames">
+    <h1>VIDEOGIOCHI</h1>
+    <button [routerLink]="['formVideogame']">AGGIUNGI VIDEOGAME</button>
+    <div class="dettaglio-videogames" *ngFor="let v of videogames$ |async">
+        <h2>{{v.title}}</h2>
+            <p>Categoria: {{v.category}}</p>
+            <p>Data di uscita: {{v.releaseDate | date}}</p>
+            <p>Genere: {{v.genre}}</p>
+            <p>Casa produttrice: {{v.softwareHouse}}</p>
+            <p>Pubblicato da {{v.publisher}}</p>
+            <p>Numero giocatori: {{v.numberOfPlayers}}</p>
+            <h4>Lingua doppiaggio:</h4>
+            <div *ngFor="let voice of v.languages.voice">
+                <ul>
+                    <li>{{voice}}</li>
+                </ul>
+            </div>
+            <h4>Lingua sottotitoli:</h4>
+            <div *ngFor="let text of v.languages.text">
+                <ul>
+                    <li>{{text}}</li>
+                </ul>
+            </div>
+            <div class="img-videogame" *ngIf="v.coverImage">
+                <img [src]="v.coverImage" alt="immagine" class="img">
+            </div>
+            <p>Id: {{v._id}}</p>
+            <button [routerLink]="['formVideogame', v._id]">MODIFICA</button>
+            <button type="button" (click)="onClickElimina(v._id)">ELIMINA</button>
+    </div>
+</div>
