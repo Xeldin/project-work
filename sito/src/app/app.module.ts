@@ -14,10 +14,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
-<<<<<<< HEAD
-  declarations: [AppComponent, NavbarComponent, FooterComponent],
-  imports: [BrowserModule, AppRoutingModule],
-=======
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+
   declarations: [
     AppComponent,
     NewsListComponent,
@@ -28,10 +26,8 @@ import { FooterComponent } from './footer/footer.component';
     VideogamesDetailsComponent,
     NavbarComponent,
     FooterComponent,
-    FilterPipeComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
->>>>>>> 4d735ce313ce5e1a16787d7069ecfda2541d7c2e
+
   providers: [],
   bootstrap: [AppComponent],
 })
