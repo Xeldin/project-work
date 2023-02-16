@@ -1,9 +1,11 @@
 <div class="all">
-  <div *ngFor="let n of news" class="news">
-    <img [src]="n.imageUrl" alt="image" class="image" />
-    <div>
-      <p class="title">{{ n.title }}</p>
-      <p class="author">by {{ n.authorName }}</p>
-    </div>
+  <div *ngFor="let n of news">
+    <a [routerLink]="['news', n._id]" class="news">
+      <img [src]="n.imageUrl" alt="image" class="image" />
+      <div>
+        <p class="title">{{ n.title }}</p>
+        <p class="author">by {{ n.authorName }}</p>
+      </div>
+    </a>
   </div>
 </div>

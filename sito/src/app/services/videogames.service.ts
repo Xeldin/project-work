@@ -15,4 +15,8 @@ export class VideogamesService {
   getVideogame(): Observable<Videogame[]> {
     return this.http.get<Videogame[]>(this.apiUrl);
   }
+
+  getSingleVideogame(_id: string): Observable<Videogame> {
+    return this.http.get<Videogame>(this.apiUrl + '/' + [_id]);
+  }
 }

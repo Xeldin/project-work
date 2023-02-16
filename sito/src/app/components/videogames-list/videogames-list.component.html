@@ -1,9 +1,11 @@
 <div class="all">
-  <div *ngFor="let v of videogame" class="videogames">
-    <img [src]="v.coverImage" alt="image" class="image" />
-    <div>
-      <p class="title">{{ v.title }}</p>
-      <p class="author">per {{ v.category }}</p>
-    </div>
+  <div *ngFor="let v of videogame">
+    <a [routerLink]="[v._id]" class="videogames">
+      <img [src]="v.coverImage" alt="image" class="image" />
+      <div>
+        <p class="title">{{ v.title }}</p>
+        <p class="author">per {{ v.category }}</p>
+      </div>
+    </a>
   </div>
 </div>

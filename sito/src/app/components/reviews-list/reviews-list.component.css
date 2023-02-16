@@ -10,3 +10,11 @@
   font-weight: 300;
   font-size: 2rem;
 }
+
+a {
+  text-decoration: none;
+}
+
+.bg:hover {
+  background-color: lightgray;
+}

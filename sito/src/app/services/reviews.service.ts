@@ -15,4 +15,8 @@ export class ReviewService {
   getReview(): Observable<Review[]> {
     return this.http.get<Review[]>(this.apiUrl);
   }
+
+  getSingleReview(_id: string): Observable<Review> {
+    return this.http.get<Review>(this.apiUrl + '/' + [_id]);
+  }
 }

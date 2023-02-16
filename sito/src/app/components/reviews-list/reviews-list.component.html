@@ -1,9 +1,13 @@
 <div class="all">
-  <div
-    *ngFor="let r of review"
-    class="reviews"
-    [ngStyle]="{ color: color(r.score) }"
-  >
-    <p>{{ r.title }} secondo {{ r.reviewerName }}: Voto - {{ r.score }}</p>
+  <div *ngFor="let r of review">
+    <a
+      [routerLink]="[r._id]"
+      class="reviews"
+      [ngStyle]="{ color: color(r.score) }"
+    >
+      <div class="bg">
+        <p>{{ r.title }} secondo {{ r.reviewerName }}: Voto - {{ r.score }}</p>
+      </div>
+    </a>
   </div>
 </div>

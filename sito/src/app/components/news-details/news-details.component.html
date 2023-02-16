@@ -1,1 +1,6 @@
-<p>news-details works!</p>
+<div *ngIf="news$ | async as news">
+  <div>
+    <p>{{ news.title }}</p>
+    <p>by {{ news.authorName }}</p>
+  </div>
+</div>
