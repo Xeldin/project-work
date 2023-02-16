@@ -10,7 +10,7 @@ import { NewsService } from 'src/app/service/news.service';
   templateUrl: './form-news.component.html',
   styleUrls: ['./form-news.component.css']
 })
-export class FormNewsComponent implements OnInit{
+export class FormNewsComponent implements OnInit {
 form:FormGroup=new FormGroup({
   title: new FormControl('', Validators.required),
   category: new FormControl('', Validators.required),
@@ -85,7 +85,6 @@ ngOnInit(): void {
 onClickSalvaModifiche(){
   this.newsService.updateNews(this.route.snapshot.paramMap.get('id')!, this.form.value).subscribe();
 }
-
 
 
 }
