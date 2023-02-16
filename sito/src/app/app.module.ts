@@ -12,7 +12,7 @@ import { ReviewsDetailsComponent } from './components/reviews-details/reviews-de
 import { VideogamesDetailsComponent } from './components/videogames-details/videogames-details.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
-import { FilterPipeComponent } from './navbar/filter-pipe/filter-pipe.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,7 @@ import { FilterPipeComponent } from './navbar/filter-pipe/filter-pipe.component'
     VideogamesDetailsComponent,
     NavbarComponent,
     FooterComponent,
-    FilterPipeComponent,
+    HomeComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
