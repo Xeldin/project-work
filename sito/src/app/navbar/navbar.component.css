@@ -29,16 +29,28 @@
 }
 
 .search button {
-  background-color: #fff;
   border: none;
-  height: 30px;
-  width: 30px;
+  justify-content: center;
+  align-items: center;
   margin-left: 10px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.search-img {
+  height: 30px;
+  width: auto;
+  cursor: pointer;
+  transition: filter 0.2s;
+}
+
+.search-img:hover {
+  filter: brightness(1.2);
 }
 
 .logo img {
-  height: 40px;
-  width: 40px;
+  height: 60px;
+  width: auto;
 }
 
 a:hover {
