@@ -24,18 +24,6 @@ const routes: Routes = [
     component: FormVideogamesComponent
   },
   {
-    path:'news',
-    component: ListaNewsComponent
-  },
-  {
-    path: 'news/formNews',
-    component: FormNewsComponent
-  },
-  {
-    path: 'news/formNews/:id',
-    component: FormNewsComponent
-  },
-  {
     path:'recensioni',
     component:ListaRecensioniComponent,
   },

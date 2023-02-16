@@ -11,6 +11,7 @@ import { FormVideogamesComponent } from 'src/app/videogames/form-videogames/form
 import { ListaRecensioniComponent } from './recensioni/lista-recensioni/lista-recensioni.component';
 import { FormRecensioniComponent } from './recensioni/form-recensioni/form-recensioni.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     HeaderComponent,
     ListaVideogamesComponent,
-    FormVideogamesComponent, 
+    FormVideogamesComponent,
+    NavBarComponent, 
   ],
   imports: [
     BrowserModule,
