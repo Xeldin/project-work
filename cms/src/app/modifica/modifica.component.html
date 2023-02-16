@@ -1,6 +1,0 @@
-<form class = "form" [formGroup]="form"]>
-  <input type = "text" placeholder= "Nome categoria" formControlName="nomecategoria">
-  <div id= "salvamodifiche" *ngIf="editmode; else elseBlock"><button class="bottoni"(click)="salvaModifiche()">SALVA MODIFICHE</button></div>
-  <ng-template #elseBlock><button (click)="aggiungi()">AGGIUNGI</button></ng-template>
-</form>
-

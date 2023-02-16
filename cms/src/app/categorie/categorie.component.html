@@ -1,5 +1,0 @@
-<button [routerLink] = "['modifica']">AGGIUNGI NUOVA CATEGORIA</button>
-<div *ngFor="let c of categorie">
-  <p>{{ c }}</p>
-  <button [routerLink]="['modifica', c.id]">MODIFICA</button><button (click)="Elimina(c.id)">ELIMINA</button>
-</div>
