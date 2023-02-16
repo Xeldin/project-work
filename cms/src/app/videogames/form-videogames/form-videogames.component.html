@@ -1,32 +1,34 @@
-<form class="formVideogame" [formGroup]="form">
+<form [formGroup]="form" (ngSubmit)="onClickAggiungi()">
+    <h4>VIDEOGAME</h4>
     <input type="text" placeholder="Titolo" formControlName="title">
+    <input type="text" placeholder="Categoria" formControlName="category">
     <input type="text" placeholder="Data rilascio aaaa-mm-gg" formControlName="releaseDate">
     <input type="text" placeholder="Genere" formControlName="genre">
     <input type="text" placeholder="Prodotto da" formControlName="softwareHouse">
     <input type="text" placeholder="Pubblicato da" formControlName="publisher">
     <input type="number" placeholder="Numero giocatori" formControlName="numberOfPlayers">
-    <div formArrayName="languages">
+    <div formGroupName="languages">
         <p>Lingua doppiaggio</p>
-        <div formArrayName="voice">
-           <button type="button" (click)="onClickAddVoice()">+</button>
-            <div *ngFor="let _ of voiceFormArray.controls; let i=index">
-                <input type="text" [formControlName]="i" [placeholder]="'Lingua doppiaggio' + (i+1)">
-                <button type="button" (click)="onRemoveVoice(i)">-</button>
-            </div>
+        <div formArrayName="voice" *ngFor="let voce of voiceFormArray.controls; let i=index">
+            <input type="text" [formControlName]="i" placeholder="eng" formControlName="voice">
+            <button type="button" (click)="onClickAddVoice()">+</button>
+            <button type="button" (click)="onRemoveVoice(i)">-</button>
         </div>
         <p>Lingua sottotitoli</p>
-        <div formArrayName="text">
+        <div formArrayName="text" *ngFor="let testo of textFormArray.controls; let i=index">
+            <input type="text" [formControlName]="i" placeholder="ita" formControlName="text">
             <button type="button" (click)="onClickAddText()">+</button>
-            <div *ngFor="let _ of voiceFormArray.controls; let i=index">
-                <input type="text" [formControlName]="i" [placeholder]="'Lingua sottotitoli' + (i+1)">
-                <button type="button" (click)="onRemoveText(i)">-</button>
-            </div>
+            <button type="button" (click)="onRemoveText(i)">-</button>
         </div>
     </div>
-    <div id="salvaModifiche" *ngIf="isEditMode; else elseBlock">
-        <button type="submit" (click)="salvaModifiche()">SALVA MODIFICHE</button>
+    <div>
+        <h5>Immagine</h5>
+        <input type="text" placeholder="URL immagine" formControlName="coverImage">
     </div>
-    <ng-template #elseBlock>
-        <button type="submit" (click)="onClickAggiungi()">AGGIUNGI VIDEOGAME</button>
-    </ng-template>
 </form>
+<div *ngIf="videogiocodamodificare$|async; else elseBlock">
+    <button (click)="onClickSalvaModifiche()">SALVA MODIFICHE</button>
+</div>
+<ng-template #elseBlock>
+    <button (click)="onClickAggiungi()">AGGIUNGI</button>
+</ng-template>

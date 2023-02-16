@@ -1,27 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { NotLoggedGuard } from './auth/not-logged.guard';
-import { HeaderComponent } from './header/header.component';
-import { LoginComponent } from './login/login.component';
-import { ModeratoreGuard } from './moderatore.guard';
-import { PannelloModeratoriComponent } from './pannello-moderatori/pannello-moderatori.component';
+import { FormVideogamesComponent } from './videogames/form-videogames/form-videogames.component';
+import { ListaVideogamesComponent } from './videogames/lista-videogames/lista-videogames.component';
 
 const routes: Routes = [
   {
-    path:'', 
-    component: HeaderComponent,
+    path:'videogames',
+    component:ListaVideogamesComponent,
   },
   {
-    path: 'login',
-    component: LoginComponent,
-    canActivate: [NotLoggedGuard],
+    path: 'videogames/formVideogame',
+    component: FormVideogamesComponent
   },
   {
-    path: 'pannello-moderatore',
-    component: PannelloModeratoriComponent,
-    canActivate: [ModeratoreGuard],
-  },
-
+    path: 'videogames/formVideogame/:id',
+    component: FormVideogamesComponent
+  }
 ];
 
 @NgModule({
