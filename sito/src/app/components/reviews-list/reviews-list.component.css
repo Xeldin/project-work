@@ -3,6 +3,8 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .reviews {
@@ -36,4 +38,6 @@ a:hover {
 
 .margin {
   margin: 0px;
+  padding-right: 1rem;
+  padding-top: 1rem;
 }
