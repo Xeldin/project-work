@@ -1,0 +1,19 @@
+<div class="card-videogames">
+ <div class="dettaglio-videogame">
+    <h2>{{title}}</h2>
+    <p>Data di uscita: {{releaseDate}}</p>
+    <p>Genere: {{genre}}</p>
+    <p>Casa produttrice: {{softwareHouse}}</p>
+    <p>Pubblicato da {{publisher}}</p>
+    <p>Numero giocatori: {{numberOfPlayers}}</p>
+    <p *ngFor="let l of languages">
+        Lingua doppiaggio: {{l.voice}} <br>
+        Lingua sottotitoli: {{l.text}}</p>
+    <div class="img-videogame">
+        <img [src]="coverImage"></div>
+ </div>
+    <div>
+        <button [routerLink]="['formVideogame', ['id']]">MODIFICA</button>
+        <button type="button" (click)="onClickElimina(['id'])">ELIMINA</button>
+    </div>
+</div>
