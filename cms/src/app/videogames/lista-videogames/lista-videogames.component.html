@@ -1,0 +1,15 @@
+<h1>VIDEOGIOCHI</h1>
+<div class="lista-videogames" >
+    <button [routerLink]="formVideogame">AGGIUNGI VIDEOGAME</button>
+    <app-card-videogame *ngFor="let v of videogames$|async"
+        [title]="r.title"
+        [releaseDate]="r.releaseDate"
+        [genre]="r.genre"
+        [softwareHouse]="r.softwareHouse"
+        [publisher]="r.publisher"
+        [numberOfPlayers]="r.numberOfPlayers"
+        [languages]="r.languages"
+        [coverImage]="r.coverImage"
+    >
+    </app-card-videogame>
+</div>

@@ -10,9 +10,23 @@ import { VideogamesListComponent } from './components/videogames-list/videogames
 import { NewsDetailsComponent } from './components/news-details/news-details.component';
 import { ReviewsDetailsComponent } from './components/reviews-details/reviews-details.component';
 import { VideogamesDetailsComponent } from './components/videogames-details/videogames-details.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
+import { FilterPipeComponent } from './navbar/filter-pipe/filter-pipe.component';
 
 @NgModule({
-  declarations: [AppComponent, NewsListComponent, ReviewsListComponent, VideogamesListComponent, NewsDetailsComponent, ReviewsDetailsComponent, VideogamesDetailsComponent],
+  declarations: [
+    AppComponent,
+    NewsListComponent,
+    ReviewsListComponent,
+    VideogamesListComponent,
+    NewsDetailsComponent,
+    ReviewsDetailsComponent,
+    VideogamesDetailsComponent,
+    NavbarComponent,
+    FooterComponent,
+    FilterPipeComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
