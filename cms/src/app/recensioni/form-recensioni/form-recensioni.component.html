@@ -1,9 +1,7 @@
-<button [routerLink]="['/recensioni']">LISTA RECENSIONI</button> 
-
-<form [formGroup]="form" (ngSubmit)="onSubmit()" class="input">
-  <div class="form">
-  <div class="datiRecensioni">
-  <label>Titolo: </label>
+<app-nav-bar></app-nav-bar>
+<div>
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="cardForm">
+  <h4>AGGIUNGI RECENSIONE</h4>
   <input id="title" placeholder="titolo" type="text" formControlName="title"> <br>
   <label>Data Pubblicazione: </label>
   <input id="publicationDate" placeholder="xx/yy/xxxx" type="date" formControlName="publicationDate"> <br>
@@ -13,7 +11,6 @@
   <input id="score" placeholder="score"  type="number" formControlName="score"><br>
   <label>Recensore: </label>
   <input id="reviewerName" placeholder="recensore" type="text" formControlName="reviewerName"><br>
-  </div>
   <div formGroupName="reviewedGame">
     <label>Dati gioco</label> <br>
     <label>Id</label>
@@ -27,8 +24,8 @@
     </div>
     <button type="button" (click)="addImageUrl()">Add Image URL</button>
   </div>
-</div>
 </form>
+</div>
 <div *ngIf="recensionedamodificare$|async; else elseBlock">
   <button (click)="onClickSalvaModifiche()">SALVA MODIFICHE</button>
 </div>
