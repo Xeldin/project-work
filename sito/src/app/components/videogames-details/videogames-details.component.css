@@ -1,0 +1,37 @@
+.all {
+  font-family: fantasy;
+  text-align: center;
+}
+
+.above {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.title {
+  font-weight: 300;
+  font-size: 2rem;
+}
+
+.author {
+  font-weight: 100;
+  font-size: 1rem;
+}
+
+.image {
+  max-width: 80%;
+  height: min-content;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.content {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.tags {
+  display: flex;
+  gap: 5rem;
+  justify-content: center;
+}

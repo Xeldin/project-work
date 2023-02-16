@@ -1,0 +1,30 @@
+<div *ngIf="videogame$ | async as videogame" class="all">
+  <div class="above">
+    <div>
+      <p class="title">{{ videogame.title }}</p>
+      <p class="author">per {{ videogame.category }}</p>
+    </div>
+    <div>
+      <p class="title">Data di rilascio: {{ videogame.releaseDate }}</p>
+      <p class="author">{{ videogame.genre }}</p>
+    </div>
+  </div>
+  <img [src]="videogame.coverImage" class="image" />
+  <div class="above">
+    <p class="content">Developer: {{ videogame.softwareHouse }}</p>
+    <p class="content">Publisher: {{ videogame.publisher }}</p>
+  </div>
+  <p class="content">
+    Massimo numero di giocatori: {{ videogame.numberOfPlayers }}
+  </p>
+  <div class="tags">
+    <p>
+      Doppiaggi:
+      <span *ngFor="let v of videogame.languages.voice">{{ v }} </span>
+    </p>
+    <p>
+      Testi:
+      <span *ngFor="let t of videogame.languages.text">{{ t }} </span>
+    </p>
+  </div>
+</div>
