@@ -1,0 +1,22 @@
+<form [formGroup]="form" (ngSubmit)="onClickAggiungi()">
+    <h4>NOTIZIA</h4>
+    <input type="text" placeholder="Titolo" formControlName="title">
+    <input type="text" placeholder="Autore" formControlName="authorName">
+    <input type="text" placeholder="Categoria" formControlName="category">
+    <input type="text" placeholder="Pubblicazione aaaa-mm-gg" formControlName="publicationDate">
+    <input type="text" placeholder="URL immagine" formControlName="imageUrl">
+    <textarea formControlName="content" placeholder="Scrivi qui la notizia"></textarea>
+    <div formArrayName="tags">
+        <div *ngFor="let i=index; let tag of tagsFormArray.controls">
+            <input type="text" [formControlName]="i" placeholder="Tag" formControlName="tags">
+            <button type="button" (click)="onAddTag()">+</button>
+            <button type="button" (click)="onRemoveTag(i)">-</button>
+        </div>
+    </div>
+</form>
+<div *ngIf="newsDaModificare$|async; else elseBlock">
+    <button (click)="onClickSalvaModifiche()">SALVA MODIFICHE</button>
+</div> 
+<ng-template #elseBlock>
+    <button (click)="onClickAggiungi()">AGGIUNGI</button>
+</ng-template>
