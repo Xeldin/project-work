@@ -9,6 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormNewsComponent } from './news/form-news/form-news.component';
 import { ListaNewsComponent } from './news/lista-news/lista-news.component';
+import { ListaCategorieComponent } from './categories/lista-categorie/lista-categorie.component';
+import { FormCategorieComponent } from './categories/form-categorie/form-categorie.component';
 
 
 @NgModule({
@@ -18,6 +20,8 @@ import { ListaNewsComponent } from './news/lista-news/lista-news.component';
     FormVideogamesComponent,
     FormNewsComponent,
     ListaNewsComponent,
+    ListaCategorieComponent,
+    FormCategorieComponent,
   ],
   imports: [
     BrowserModule,
