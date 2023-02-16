@@ -1,0 +1,27 @@
+<div *ngIf="isLogged$ | async; else elseblock">
+  <app-header></app-header>
+  <button (click)="onLogout()">LOG-OUT</button>
+</div>
+<ng-template #elseblock>
+  <form [formGroup]="form" (ngSubmit)="onLogin()">
+    <div>
+      <input placeholder="Username" formControlName="username" autofocus />
+      <small
+        *ngIf="
+          form.get('username')?.touched &&
+          form.get('username')?.hasError('required')
+        "
+      >
+        Username è un campo obbligatori</small
+      >
+    </div>
+    <div>
+      <input
+        type="password"
+        placeholder="Password"
+        formControlName="password"
+      />
+    </div>
+    <button type="submit">Login</button>
+  </form>
+</ng-template>
