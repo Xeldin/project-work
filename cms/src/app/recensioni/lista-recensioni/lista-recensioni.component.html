@@ -1,0 +1,24 @@
+<div class="lista-recensioni">
+  <h1>Lista Recensioni</h1>
+  <button [routerLink]="['form-recensione']">AGGIUNGI RECENSIONE</button>
+   
+  <div *ngFor="let r of recensioni$ |async" class="card">
+    <div class="f">
+    <div>
+      <h2>{{ r.title }}</h2>
+      <img [src]="r.imageUrls" alt="immagine" class="img">
+    </div>
+    <div>
+      <p>Recensore: {{ r.reviewerName }}</p>
+      <p type="data"> Data; {{ r.publicationDate }}</p>
+      <p>Contenuto: {{ r.content }}</p>
+      <p>Score: {{ r.score }}</p>
+      <p>Gioco Recensito: {{ r.reviewedGame.name }}</p>
+    </div>
+      <div>
+        <button type="button" (click)="onClickElimina(r._id)">ELIMINA</button>
+        <button [routerLink]="['form-recensione', r._id]">MODIFICA</button> 
+     </div>      
+    </div>
+</div>
+

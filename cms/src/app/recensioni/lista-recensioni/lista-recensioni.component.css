@@ -1,0 +1,9 @@
+
+img{
+    width: 15rem;
+    height: 15rem;
+}
+
+.card{
+    float:left; margin-left:5px;
+}
