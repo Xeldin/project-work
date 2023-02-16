@@ -26,6 +26,7 @@ export class FormCategorieComponent implements OnInit{
       this.categories$=this.categorieService.getCategorie();
     });
     this.pulisciForm();
+    alert('Categoria aggiunta con successo!');
   }
 
   pulisciForm(){
@@ -53,6 +54,7 @@ export class FormCategorieComponent implements OnInit{
 
   onClickSalvaModifiche(){
     this.categorieService.updateCategoria(this.route.snapshot.paramMap.get('id')!, this.form.value).subscribe();
+    alert('Modifica effettuata con successo!');
   }
 
 }

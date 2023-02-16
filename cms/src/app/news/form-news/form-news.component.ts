@@ -32,6 +32,7 @@ onClickAggiungi(){
     this.news$=this.newsService.getAllNews();
   });
   this.pulisciForm();
+  alert('Notizia aggiunta con successo!');
 }
 
 pulisciForm(){
@@ -84,6 +85,7 @@ ngOnInit(): void {
 
 onClickSalvaModifiche(){
   this.newsService.updateNews(this.route.snapshot.paramMap.get('id')!, this.form.value).subscribe();
+  alert('Modifica effettuata con successo!');
 }
 
 
