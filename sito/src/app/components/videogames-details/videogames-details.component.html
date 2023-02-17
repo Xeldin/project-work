@@ -1,30 +1,47 @@
-<div *ngIf="videogame$ | async as videogame" class="all">
-  <div class="above">
-    <div>
-      <p class="title">{{ videogame.title }}</p>
-      <p class="author">per {{ videogame.category }}</p>
+<div class="card-container">
+  <div *ngIf="videogame$ | async as videogame" class="all">
+    <div class="container">
+      <div class="container-title">
+        <p class="title">{{ videogame.title }}</p>
+        <p class="author">
+          per <span class="category">{{ videogame.category }}</span>
+        </p>
+      </div>
     </div>
-    <div>
-      <p class="title">Data di rilascio: {{ videogame.releaseDate }}</p>
-      <p class="author">{{ videogame.genre }}</p>
+    <img [src]="videogame.coverImage" class="image" />
+    <div class="container-date">
+      <p class="exit-date">
+        <span class="testo">Data di rilascio:</span> {{ videogame.releaseDate }}
+      </p>
+      <p class="genere">
+        <span class="testo">Genere:</span> {{ videogame.genre }}
+      </p>
     </div>
-  </div>
-  <img [src]="videogame.coverImage" class="image" />
-  <div class="above">
-    <p class="content">Developer: {{ videogame.softwareHouse }}</p>
-    <p class="content">Publisher: {{ videogame.publisher }}</p>
-  </div>
-  <p class="content">
-    Massimo numero di giocatori: {{ videogame.numberOfPlayers }}
-  </p>
-  <div class="tags">
-    <p>
-      Doppiaggi:
-      <span *ngFor="let v of videogame.languages.voice">{{ v }} </span>
+    <div class="">
+      <p class="developert">
+        <span class="testo">Developer:</span> {{ videogame.softwareHouse }}
+      </p>
+      <p class="publisher">
+        <span class="testo">Publisher:</span> {{ videogame.publisher }}
+      </p>
+    </div>
+    <p class="players">
+      <span class="testo">Massimo numero di giocatori:</span>
+      {{ videogame.numberOfPlayers }}
     </p>
-    <p>
-      Testi:
-      <span *ngFor="let t of videogame.languages.text">{{ t }} </span>
-    </p>
+    <div class="tags">
+      <p>
+        <span class="testo">Doppiaggi:</span>
+        <span class="tags-list" *ngFor="let v of videogame.languages.voice"
+          >{{ v }}
+        </span>
+      </p>
+      <p>
+        <span class="testo">Testi:</span>
+        <span class="tags-list" *ngFor="let t of videogame.languages.text"
+          >{{ t }}
+        </span>
+      </p>
+    </div>
   </div>
 </div>

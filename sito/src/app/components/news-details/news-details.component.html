@@ -1,19 +1,33 @@
-<div *ngIf="news$ | async as news" class="all">
-  <div class="above">
-    <div>
-      <p class="title">{{ news.title }}</p>
-      <p class="author">by {{ news.authorName }}</p>
+<div class="card-container">
+  <div *ngIf="news$ | async as news" class="all">
+    <div class="container">
+      <div>
+        <p class="title">{{ news.title }}</p>
+        <br />
+        <p class="author">by {{ news.authorName }}</p>
+      </div>
     </div>
-    <div>
-      <p class="title">{{ news.category }}</p>
-      <p class="author">{{ news.publicationDate }}</p>
+    <img [src]="news.imageUrl" class="image" />
+    <div class="category-container">
+      <span class="testo">Piattaforma:</span>
+      <p class="category">
+        {{ news.category }}
+      </p>
+      <div class="date-container">
+        <span class="testo">Pubblicato il:</span>
+        <p class="exit-date">
+          {{ news.publicationDate }}
+        </p>
+      </div>
     </div>
-  </div>
-  <img [src]="news.imageUrl" class="image" />
-  <p class="content">{{ news.content }}</p>
-  <div class="tags">
-    <div *ngFor="let t of news.tags">
-      <p>{{ t }}</p>
+
+    <div class="description">
+      <p class="content">{{ news.content }}</p>
+    </div>
+    <div class="tags">
+      <div *ngFor="let t of news.tags">
+        <p>{{ t }}</p>
+      </div>
     </div>
   </div>
 </div>

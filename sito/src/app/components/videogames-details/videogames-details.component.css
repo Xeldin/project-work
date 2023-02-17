@@ -1,37 +1,147 @@
-.all {
-  font-family: fantasy;
-  text-align: center;
+.card-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.above {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+.all {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 2px 6px rgba(39, 124, 6, 0.712);
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  max-width: 50%;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.container-title {
+  padding: 10px;
+}
+
+.container-date {
+  font-size: 18px;
+  margin: 10px 20px 0;
 }
 
 .title {
-  font-weight: 300;
-  font-size: 2rem;
+  font-size: 40px;
+  font-weight: bolder;
+  margin: 0;
 }
 
 .author {
-  font-weight: 100;
-  font-size: 1rem;
+  font-size: 20px;
+  margin: 10px 0 0;
+}
+.category {
+  background-color: whitesmoke;
+  padding: 5px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  width: fit-content;
+}
+
+.exit-date {
+  font-size: 16px;
+  margin: 0;
+}
+
+.genere {
+  font-size: 16px;
+  margin: 10px 0 0;
 }
 
 .image {
-  max-width: 80%;
-  height: min-content;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
 }
 
-.content {
-  margin-left: 10%;
-  margin-right: 10%;
+.developert,
+.publisher,
+.players {
+  font-size: 18px;
+  margin: 10px 20px 0;
 }
 
 .tags {
-  display: flex;
-  gap: 5rem;
-  justify-content: center;
+  margin: 10px 20px 20px;
+}
+
+.tags p {
+  font-size: 16px;
+  margin: 0 0 10px;
+}
+
+.tags-list {
+  font-weight: bold;
+  background-color: whitesmoke;
+  padding: 5px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  width: fit-content;
+  margin: 5px;
+}
+
+.testo {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+@media only screen and (max-width: 767px) {
+  .all {
+    max-width: 100%;
+    margin: 10px;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .image {
+    border-radius: 10px;
+  }
+
+  .tags {
+    margin: 10px;
+  }
+
+  .tags-list {
+    margin: 5px;
+  }
+
+  .author {
+    margin: 5px 0 0;
+  }
+
+  .container-title {
+    padding: 5px;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .category {
+    margin-top: 10px;
+  }
+
+  .container-date,
+  .exit-date,
+  .genere,
+  .developert,
+  .publisher,
+  .players {
+    font-size: 14px;
+    margin: 5px 20px 0;
+  }
 }
