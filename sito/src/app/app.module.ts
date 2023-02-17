@@ -14,7 +14,10 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 
+
 @NgModule({
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+
   declarations: [
     AppComponent,
     NewsListComponent,
@@ -26,8 +29,9 @@ import { HomeComponent } from './components/home/home.component';
     NavbarComponent,
     FooterComponent,
     HomeComponent,
+
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+
   providers: [],
   bootstrap: [AppComponent],
 })
