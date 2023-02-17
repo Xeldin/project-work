@@ -1,24 +1,25 @@
 .card-container {
   display: flex;
-  align-items: center; /* Center vertically */
-  justify-content: center; /* Center horizontally */
-  height: 100%; /* Set the container to take up the full viewport height */
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .all {
-  background-color: #fff; /* Set the background color of the card */
-  border-radius: 10px; /* Round the corners of the card */
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3); /* Add a subtle box shadow to the card */
-  display: flex; /* Use flexbox to position the content within the card */
-  flex-direction: column; /* Stack the content vertically within the card */
-  margin: 20px; /* Add some margin around the card */
-  max-width: 50%; /* Set the maximum width of the card */
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 2px 6px rgba(39, 124, 6, 0.712);
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  max-width: 50%;
 }
 
 .container {
-  display: flex; /* Use flexbox to position the title and details within the card */
-  justify-content: space-between; /* Space the title and details out */
-  padding: 20px; /* Add some padding to the left and right of the title and details */
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
 }
 
 .container-title {
@@ -26,73 +27,72 @@
 }
 
 .container-date {
-  font-size: 18px; /* Set the font size of the details */
-  margin: 10px 20px 0; /* Add some spacing above the details */
+  font-size: 18px;
+  margin: 10px 20px 0;
 }
 
 .title {
-  font-size: 40px; /* Set the font size of the title */
-  font-weight: bolder; /* Make the title bold */
-  margin: 0; /* Remove any margin around the title */
+  font-size: 40px;
+  font-weight: bolder;
+  margin: 0;
 }
 
 .author {
-  font-size: 20px; /* Set the font size of the author */
-  margin: 10px 0 0; /* Add some spacing above the author */
+  font-size: 20px;
+  margin: 10px 0 0;
 }
 .category {
-  background-color: whitesmoke; /* Set the background color to a yellow shade */
-  padding: 5px; /* Add some padding to the background */
+  background-color: whitesmoke;
+  padding: 5px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
   width: fit-content;
 }
 
 .exit-date {
-  font-size: 16px; /* Set the font size of the exit date */
-  margin: 0; /* Remove any margin around the exit date */
+  font-size: 16px;
+  margin: 0;
 }
 
 .genere {
-  font-size: 16px; /* Set the font size of the genre */
-  margin: 10px 0 0; /* Add some spacing above the genre */
+  font-size: 16px;
+  margin: 10px 0 0;
 }
 
 .image {
-  width: 100%; /* Make the image fill the width of the card */
-  height: auto; /* Maintain the aspect ratio of the image */
-  object-fit: cover; /* Crop the image to fill the available space */
-  border-radius: 10px 10px 0 0; /* Round the top corners of the image */
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
 }
 
 .developert,
 .publisher,
 .players {
-  font-size: 18px; /* Set the font size of the details */
-  margin: 10px 20px 0; /* Add some spacing above the details */
+  font-size: 18px;
+  margin: 10px 20px 0;
 }
 
 .tags {
-  margin: 10px 20px 20px; /* Add some spacing around the tags */
+  margin: 10px 20px 20px;
 }
 
 .tags p {
-  font-size: 16px; /* Set the font size of the tags */
-  margin: 0 0 10px; /* Add some spacing below each tag */
+  font-size: 16px;
+  margin: 0 0 10px;
 }
 
 .tags-list {
-  font-weight: bold; /* Make the tag values bold */
+  font-weight: bold;
   background-color: whitesmoke;
-  padding: 5px; /* Add some padding to the background */
+  padding: 5px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-  width: fit-content; /* Add some padding to the tags */
+  width: fit-content;
   margin: 5px;
 }
 
 .testo {
   font-size: 20px;
   font-weight: 700;
-  text-decoration: underline;
 }
 
 @media only screen and (max-width: 767px) {

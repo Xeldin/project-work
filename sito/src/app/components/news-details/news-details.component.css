@@ -3,12 +3,13 @@
   align-items: center; /* Center vertically */
   justify-content: center; /* Center horizontally */
   height: 100%; /* Set the container to take up the full viewport height */
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .all {
   background-color: #fff; /* Set the background color of the card */
   border-radius: 10px; /* Round the corners of the card */
-  box-shadow: 0px 2px 6px rgba(0, 0, 255, 0.3); /* Add a subtle blue box shadow to the card */
+  box-shadow: 0px 2px 6px rgba(255, 0, 0, 0.511); /* Add a subtle blue box shadow to the card */
   margin: 20px; /* Add some margin around the card */
   max-width: 800px; /* Set the maximum width of the card */
   display: flex; /* Use flexbox to position the content within the card */
