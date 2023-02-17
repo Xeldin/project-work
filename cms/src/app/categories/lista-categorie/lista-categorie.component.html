@@ -1,6 +1,7 @@
+<app-nav-bar></app-nav-bar>
 <div class="lista-categorie">
     <h1>CATEGORIE</h1>
-    <button [routerLink]="['formCategory']">AGGIUNGI CATEGORIA</button>
+    <button [routerLink]="['formCategory']">+ CATEGORIA</button>
     <div class="dettaglio-categoria" *ngFor="let c of categories$|async">
         <h2>{{c.name}}</h2>
         <button [routerLink]="['formCategory', c._id]">MODIFICA</button>

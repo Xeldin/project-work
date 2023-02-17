@@ -1,7 +1,7 @@
 <app-nav-bar></app-nav-bar>
 <div class="lista-videogames">
     <h1>VIDEOGIOCHI</h1>
-    <button [routerLink]="['formVideogame']">AGGIUNGI VIDEOGAME</button>
+    <button class="card"[routerLink]="['formVideogame']">+ VIDEOGAME</button>
     <div class="card" *ngFor="let v of videogames$ |async">
         <h2>{{v.title}}</h2>
             <p>Categoria: {{v.category}}</p>
