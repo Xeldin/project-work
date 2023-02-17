@@ -1,20 +1,15 @@
 <nav>
   <div class="container">
-    <div class="logo">
-      <img src="/assets/Logo.png" />
-    </div>
+    <img src="/assets/Logobig.png" class="logo" />
+    <img *ngIf="homeRoute()" src="/assets/controller.png" class="image" />
+    <img *ngIf="newsRoute()" src="/assets/News.png" class="image" />
+    <img *ngIf="videogameRoute()" src="/assets/videogame.png" class="image" />
+    <img *ngIf="reviewRoute()" src="/assets/Reviews.png" class="image" />
     <div class="nav-links">
-      <a routerLink="">Home</a>
-      <a routerLink="">Videogiochi</a>
-      <a routerLink="">News</a>
-      <a routerLink="">Recensioni</a>
+      <a routerLink="/">Home</a>
+      <a routerLink="/news">News</a>
+      <a routerLink="/reviews">Recensioni</a>
+      <a routerLink="/videogames">Videogiochi</a>
     </div>
-    <!-- <form class="search" (submit)="onSearch($event)">
-      <input type="search" />
-      
-      <button type="submit">
-        <img src="/assets/Search.png" class="search-img" />
-      </button>
-    </form> -->
   </div>
 </nav>

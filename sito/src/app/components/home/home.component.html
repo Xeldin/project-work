@@ -1,0 +1,49 @@
+<p class="shouter">Latest News</p>
+<div class="all">
+  <div *ngFor="let n of news | slice : 0 : 4">
+    <div class="card-list">
+      <a [routerLink]="['news', n._id]" class="news">
+        <img [src]="n.imageUrl" alt="image" class="image" />
+        <div>
+          <p class="title">{{ n.title }}</p>
+          <p class="author">by {{ n.authorName }}</p>
+          <p class="author">{{ n.content | slice : 0 : 50 }}...</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+<p class="shouter">Latest Reviews</p>
+<div class="all">
+  <div *ngFor="let r of review | slice : 0 : 4">
+    <div class="card-list">
+      <a
+        [routerLink]="['reviews', r._id]"
+        class="reviews"
+        [ngStyle]="{ color: color(r.score) }"
+      >
+        <img [src]="r.imageUrls[0]" alt="image" class="image" />
+        <div class="bg">
+          <p class="margin">
+            {{ r.title }} secondo {{ r.reviewerName }}:<br />
+            Voto - {{ r.score }}
+          </p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+<p class="shouter">Latest Videogames</p>
+<div class="all">
+  <div *ngFor="let v of videogame | slice : 0 : 4">
+    <div class="card-list">
+      <a [routerLink]="['videogames', v._id]" class="videogames">
+        <img [src]="v.coverImage" alt="image" class="image" />
+        <div>
+          <p class="title">{{ v.title }}</p>
+          <p class="author">per {{ v.category }}</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,13 +1,19 @@
 <div class="all">
   <div *ngFor="let r of review">
-    <a
-      [routerLink]="[r._id]"
-      class="reviews"
-      [ngStyle]="{ color: color(r.score) }"
-    >
-      <div class="bg">
-        <p>{{ r.title }} secondo {{ r.reviewerName }}: Voto - {{ r.score }}</p>
-      </div>
-    </a>
+    <div class="card-list">
+      <a
+        [routerLink]="[r._id]"
+        class="reviews"
+        [ngStyle]="{ color: color(r.score) }"
+      >
+        <img [src]="r.imageUrls[0]" alt="image" class="image" />
+        <div class="bg">
+          <p class="margin">
+            {{ r.title }} secondo {{ r.reviewerName }}:<br />
+            Voto - {{ r.score }}
+          </p>
+        </div>
+      </a>
+    </div>
   </div>
 </div>

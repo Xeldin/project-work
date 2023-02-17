@@ -2,37 +2,52 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.card-list {
+  color: white;
+  background-color: #333;
+  height: 100px;
 }
 
 .videogames {
   display: flex;
+  text-align: right;
+  justify-content: space-between;
 }
 
 a {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 a:hover {
-  background-color: lightgray;
+  background-color: darkgray;
 }
 
 .image {
-  width: 15rem;
-  height: min-content;
+  width: auto;
+  height: 100px;
   padding-left: 2rem;
   padding-right: 2rem;
 }
 
 .title {
-  font-family: fantasy;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: 300;
   font-size: 2rem;
+  margin: 0%;
+  padding-right: 1rem;
+  padding-top: 1rem;
 }
 
 .author {
-  font-family: fantasy;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: 100;
   font-size: 1rem;
-  text-align: center;
+  text-align: right;
+  margin: 0%;
+  padding-right: 1rem;
 }

@@ -12,6 +12,8 @@ import { ReviewsDetailsComponent } from './components/reviews-details/reviews-de
 import { VideogamesDetailsComponent } from './components/videogames-details/videogames-details.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './components/home/home.component';
+
 
 @NgModule({
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
@@ -26,6 +28,8 @@ import { FooterComponent } from './footer/footer.component';
     VideogamesDetailsComponent,
     NavbarComponent,
     FooterComponent,
+    HomeComponent,
+
   ],
 
   providers: [],
