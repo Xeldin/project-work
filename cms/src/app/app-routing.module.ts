@@ -4,6 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoggedGuard } from './guard/logged';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
+import { FormVideogamesComponent } from './videogames/form-videogames/form-videogames.component';
+import { ListaVideogamesComponent } from './videogames/lista-videogames/lista-videogames.component';
 
 const routes: Routes = [
   {
@@ -63,7 +65,6 @@ const routes: Routes = [
   },
 
 ];
-
 
 
 @NgModule({
