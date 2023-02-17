@@ -1,37 +1,147 @@
-.all {
-  font-family: fantasy;
-  text-align: center;
+.card-container {
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  height: 100%; /* Set the container to take up the full viewport height */
 }
 
-.above {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+.all {
+  background-color: #fff; /* Set the background color of the card */
+  border-radius: 10px; /* Round the corners of the card */
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3); /* Add a subtle box shadow to the card */
+  display: flex; /* Use flexbox to position the content within the card */
+  flex-direction: column; /* Stack the content vertically within the card */
+  margin: 20px; /* Add some margin around the card */
+  max-width: 50%; /* Set the maximum width of the card */
+}
+
+.container {
+  display: flex; /* Use flexbox to position the title and details within the card */
+  justify-content: space-between; /* Space the title and details out */
+  padding: 20px; /* Add some padding to the left and right of the title and details */
+}
+
+.container-title {
+  padding: 10px;
+}
+
+.container-date {
+  font-size: 18px; /* Set the font size of the details */
+  margin: 10px 20px 0; /* Add some spacing above the details */
 }
 
 .title {
-  font-weight: 300;
-  font-size: 2rem;
+  font-size: 40px; /* Set the font size of the title */
+  font-weight: bolder; /* Make the title bold */
+  margin: 0; /* Remove any margin around the title */
 }
 
 .author {
-  font-weight: 100;
-  font-size: 1rem;
+  font-size: 20px; /* Set the font size of the author */
+  margin: 10px 0 0; /* Add some spacing above the author */
+}
+.category {
+  background-color: whitesmoke; /* Set the background color to a yellow shade */
+  padding: 5px; /* Add some padding to the background */
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  width: fit-content;
+}
+
+.exit-date {
+  font-size: 16px; /* Set the font size of the exit date */
+  margin: 0; /* Remove any margin around the exit date */
+}
+
+.genere {
+  font-size: 16px; /* Set the font size of the genre */
+  margin: 10px 0 0; /* Add some spacing above the genre */
 }
 
 .image {
-  max-width: 80%;
-  height: min-content;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  width: 100%; /* Make the image fill the width of the card */
+  height: auto; /* Maintain the aspect ratio of the image */
+  object-fit: cover; /* Crop the image to fill the available space */
+  border-radius: 10px 10px 0 0; /* Round the top corners of the image */
 }
 
-.content {
-  margin-left: 10%;
-  margin-right: 10%;
+.developert,
+.publisher,
+.players {
+  font-size: 18px; /* Set the font size of the details */
+  margin: 10px 20px 0; /* Add some spacing above the details */
 }
 
 .tags {
-  display: flex;
-  gap: 5rem;
-  justify-content: center;
+  margin: 10px 20px 20px; /* Add some spacing around the tags */
+}
+
+.tags p {
+  font-size: 16px; /* Set the font size of the tags */
+  margin: 0 0 10px; /* Add some spacing below each tag */
+}
+
+.tags-list {
+  font-weight: bold; /* Make the tag values bold */
+  background-color: whitesmoke;
+  padding: 5px; /* Add some padding to the background */
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  width: fit-content; /* Add some padding to the tags */
+  margin: 5px;
+}
+
+.testo {
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 767px) {
+  .all {
+    max-width: 100%;
+    margin: 10px;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .image {
+    border-radius: 10px;
+  }
+
+  .tags {
+    margin: 10px;
+  }
+
+  .tags-list {
+    margin: 5px;
+  }
+
+  .author {
+    margin: 5px 0 0;
+  }
+
+  .container-title {
+    padding: 5px;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .category {
+    margin-top: 10px;
+  }
+
+  .container-date,
+  .exit-date,
+  .genere,
+  .developert,
+  .publisher,
+  .players {
+    font-size: 14px;
+    margin: 5px 20px 0;
+  }
 }

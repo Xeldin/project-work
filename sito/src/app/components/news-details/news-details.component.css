@@ -1,37 +1,189 @@
-.all {
-  font-family: fantasy;
-  text-align: center;
+.card-container {
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  height: 100%; /* Set the container to take up the full viewport height */
 }
 
-.above {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+.all {
+  background-color: #fff; /* Set the background color of the card */
+  border-radius: 10px; /* Round the corners of the card */
+  box-shadow: 0px 2px 6px rgba(0, 0, 255, 0.3); /* Add a subtle blue box shadow to the card */
+  margin: 20px; /* Add some margin around the card */
+  max-width: 800px; /* Set the maximum width of the card */
+  display: flex; /* Use flexbox to position the content within the card */
+  flex-direction: column; /* Stack the content vertically within the card */
+  justify-content: center;
+}
+
+.container {
+  display: flex; /* Use flexbox to position the title, image and details within the card */
+  justify-content: space-between; /* Space the title and details out */
+  padding: 20px; /* Add some padding to the left and right of the title and details */
+}
+
+.container > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container > div > p {
+  margin: 0;
 }
 
 .title {
-  font-weight: 300;
-  font-size: 2rem;
+  font-size: 40px; /* Set the font size of the title */
+  font-weight: bold; /* Make the title bold */
+  margin: 0; /* Remove any margin around the title */
 }
 
 .author {
-  font-weight: 100;
-  font-size: 1rem;
+  font-size: 20px; /* Set the font size of the author */
+  margin: 10px 0 0; /* Add some spacing above the author */
+}
+
+.category {
+  background-color: #eee; /* Set the background color of the category */
+  padding: 5px; /* Add some padding to the category */
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Add a subtle box shadow to the category */
+  width: fit-content; /* Set the category width to fit the content */
+  margin: 10px 0; /* Add some spacing above and below the category */
+  text-align: center; /* Center the category text */
+}
+
+.exit-date {
+  font-size: 18px; /* Set the font size of the exit date */
+  margin: 0; /* Remove any margin around the exit date */
+  margin: 5px;
+  background-color: #eee; /* Set the background color of the tags */
+  padding: 5px; /* Add some padding to the tags */
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Add a subtle box shadow to the tags */
+}
+
+.date-container {
+  display: flex;
+  align-items: center;
+}
+
+.category-container {
+  padding: 20px;
 }
 
 .image {
-  max-width: 80%;
-  height: min-content;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  width: 100%; /* Make the image fill the width of the container */
+  height: auto; /* Maintain the aspect ratio of the image */
+  object-fit: cover; /* Crop the image to fill the available space */
+  border-radius: 10px 10px 0 0; /* Round the top corners of the image */
+}
+
+.description {
+  padding: 20px; /* Add some padding to the description */
 }
 
 .content {
-  margin-left: 10%;
-  margin-right: 10%;
+  font-size: 20px; /* Set the font size of the content */
+  line-height: 1.5; /* Set the line height of the content */
+  margin: 0; /* Remove any margin around the content */
 }
 
 .tags {
+  margin: 20px; /* Add some spacing around the tags */
   display: flex;
-  gap: 5rem;
   justify-content: center;
 }
+
+.tags div {
+  display: inline-block;
+  margin: 5px;
+  background-color: #eee; /* Set the background color of the tags */
+  padding: 5px; /* Add some padding to the tags */
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Add a subtle box shadow to the tags */
+}
+
+.tags div p {
+  margin: 0;
+  font-size: 16px; /* Set the font size of the tags */
+}
+
+.testo {
+  font-size: 20px;
+}
+
+/* Styles for screens smaller than 600px */
+/* Styles for screens smaller than 600px */
+@media (max-width: 600px) {
+  .all {
+    margin: 10px; /* Reduce the margin around the card */
+    max-width: 100%; /* Set the maximum width of the card to 100% */
+  }
+
+  .container {
+    flex-direction: column; /* Stack the title, image and details vertically */
+    padding: 10px; /* Reduce the padding around the title and details */
+  }
+
+  .title {
+    font-size: 30px; /* Reduce the font size of the title */
+  }
+
+  .author {
+    font-size: 16px; /* Reduce the font size of the author */
+  }
+
+  .category {
+    font-size: 14px; /* Reduce the font size of the category */
+    padding: 3px; /* Reduce the padding around the category */
+  }
+
+  .exit-date {
+    font-size: 14px; /* Reduce the font size of the exit date */
+  }
+
+  .content {
+    font-size: 16px; /* Reduce the font size of the content */
+  }
+
+  .tags div p {
+    font-size: 14px; /* Reduce the font size of the tags */
+  }
+}
+
+/* Styles for screens between 600px and 900px */
+@media (min-width: 600px) and (max-width: 900px) {
+  .all {
+    margin: 15px; /* Adjust the margin around the card */
+    max-width: 90%; /* Set the maximum width of the card to 90% */
+  }
+
+  .container {
+    padding: 15px; /* Adjust the padding around the title and details */
+  }
+
+  .title {
+    font-size: 35px; /* Adjust the font size of the title */
+  }
+
+  .author {
+    font-size: 18px; /* Adjust the font size of the author */
+  }
+
+  .category {
+    font-size: 16px; /* Adjust the font size of the category */
+    padding: 4px; /* Adjust the padding around the category */
+  }
+
+  .exit-date {
+    font-size: 16px; /* Adjust the font size of the exit date */
+  }
+
+  .content {
+    font-size: 18px; /* Adjust the font size of the content */
+  }
+
+  .tags div p {
+    font-size: 16px; /* Adjust the font size of the tags */
+  }
+}
+
+/* Styles for screens larger than 900px */
