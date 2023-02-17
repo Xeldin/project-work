@@ -1,7 +1,7 @@
 <div class="lista-news">
     <h1>NEWS</h1>
-    <button [routerLink]="['formNews']">AGGIUNGI NOTIZIA</button>
-    <div class="dettaglio-news" *ngFor="let n of news$|async">
+    <button [routerLink]="['formNews']" class="card">AGGIUNGI NOTIZIA</button>
+    <div class="card" *ngFor="let n of news$|async">
         <h2>{{n.title}}</h2>
         <h3><p>{{n.content}}</p></h3>
         <p>Categoria: {{n.category}}</p>
