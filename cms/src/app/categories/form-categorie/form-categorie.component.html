@@ -1,0 +1,10 @@
+<form [formGroup]="form" (ngSubmit)="onClickAggiungi()">
+    <h4>CATEGORIA</h4>
+    <input type="text" placeholder="Nome categoria" formControlName="name">
+</form>
+<div *ngIf="categoriaDaModificare$|async; else elseBlock">
+    <button (click)="onClickSalvaModifiche()">SALVA MODIFICHE</button>
+</div> 
+<ng-template #elseBlock>
+    <button (click)="onClickAggiungi()">AGGIUNGI</button>
+</ng-template>
