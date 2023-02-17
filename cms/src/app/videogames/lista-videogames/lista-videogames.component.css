@@ -3,6 +3,14 @@ img{
     height: 30rem;
 }
 
+.language{
+    display: flex;
+    flex-direction: column;
+    
+}
+li{
+    float: left;
+}
 /* .img-videogame{
     display: flex;
     float: right;

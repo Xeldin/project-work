@@ -1,9 +1,14 @@
+.liste-recensioni{
+    display: flex;
+    justify-content: center;
+    margin-top:auto;
+    position:relative;
 
-img{
-    width: 15rem;
-    height: 15rem;
 }
+.button{
+    position:relative;
 
-.card{
-    float:left; margin-left:5px;
+}
+.as{
+    position:absolute;
 }

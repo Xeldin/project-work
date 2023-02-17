@@ -2,6 +2,7 @@
   <app-header></app-header>
   <button (click)="onLogout()">LOG-OUT</button>
 </div>
+<div class="card">
 <ng-template #elseblock>
   <form [formGroup]="form" (ngSubmit)="onLogin()">
     <div>
@@ -25,3 +26,4 @@
     <button type="submit">Login</button>
   </form>
 </ng-template>
+</div>

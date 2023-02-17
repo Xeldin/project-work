@@ -16,6 +16,8 @@ import { FormCategorieComponent } from './categories/form-categorie/form-categor
 import { ListaRecensioniComponent } from './recensioni/lista-recensioni/lista-recensioni.component';
 import { FormRecensioniComponent } from './recensioni/form-recensioni/form-recensioni.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+
 
 @NgModule({
   declarations: [
@@ -26,11 +28,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HeaderComponent,
     ListaVideogamesComponent,
     FormVideogamesComponent,
+    NavBarComponent, 
     FormNewsComponent,
     ListaNewsComponent,
     ListaCategorieComponent,
     FormCategorieComponent,
-
   ],
   imports: [
     BrowserModule,

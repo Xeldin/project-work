@@ -1,9 +1,9 @@
+<app-nav-bar></app-nav-bar>
+<div class="as">
+<button class="card" [routerLink]="['form-recensione']">+ RECENSIONE</button>
 <div class="lista-recensioni">
-  <h1>Lista Recensioni</h1>
-  <button [routerLink]="['form-recensione']">AGGIUNGI RECENSIONE</button>
-   
   <div *ngFor="let r of recensioni$ |async" class="card">
-    <div class="f">
+    <div>
     <div>
       <h2>{{ r.title }}</h2>
       <img [src]="r.imageUrls" alt="immagine" class="img">
@@ -20,5 +20,6 @@
         <button [routerLink]="['form-recensione', r._id]">MODIFICA</button> 
      </div>      
     </div>
+  </div>
 </div>
 
