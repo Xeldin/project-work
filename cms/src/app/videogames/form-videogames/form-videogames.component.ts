@@ -41,6 +41,7 @@ export class FormVideogamesComponent implements OnInit {
       this.videogames$ = this.videogiochiService.getVideogiochi();
     });
     this.pulisciForm();
+    alert('Videogioco aggiunto con successo!');
   }
 
   pulisciForm(){
@@ -132,5 +133,6 @@ export class FormVideogamesComponent implements OnInit {
   }
   onClickSalvaModifiche() {
     this.videogiochiService.updateVideogioco(this.route.snapshot.paramMap.get('id')!, this.form.value).subscribe();
+    alert('Modifica effettuata con successo!');
   }
 }
