@@ -1,36 +1,67 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
+import { LoggedGuard } from './guard/logged';
+import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {
     path:'',
-    component:HomeComponent,
+    component: HomeComponent,
+    //
+  },
+  {
+    path: 'home',
+    component: HeaderComponent,
+    canActivate: [LoggedGuard]
   },
   {
     path:'videogames',
-    component:ListaVideogamesComponent,
+    component: ListaVideogamesComponent,
+    canActivate: [LoggedGuard]
   },
   {
     path: 'videogames/formVideogame',
-    component: FormVideogamesComponent
+    component: FormVideogamesComponent,
+    canActivate: [LoggedGuard]
   },
   {
     path: 'videogames/formVideogame/:id',
-    component: FormVideogamesComponent
+    component: FormVideogamesComponent,
+    canActivate: [LoggedGuard]
   },
   {
     path:'news',
-    component: ListaNewsComponent
+    component: ListaNewsComponent,
+    canActivate: [LoggedGuard]
   },
   {
     path: 'news/formNews',
-    component: FormNewsComponent
+    component: FormNewsComponent,
+    canActivate: [LoggedGuard]
   },
   {
     path: 'news/formNews/:id',
-    component: FormNewsComponent
-  }
+    component: FormNewsComponent,
+    canActivate: [LoggedGuard]
+  },
+  {
+    path:'categories',
+    component: ListaCategorieComponent,
+    canActivate: [LoggedGuard]
+  },
+  {
+    path: 'categories/formCategory',
+    component: FormCategorieComponent,
+    canActivate: [LoggedGuard]
+  },
+  {
+    path: 'categories/formCategory/:id',
+    component: FormCategorieComponent,
+    canActivate: [LoggedGuard]
+  },
+
 ];
 
 

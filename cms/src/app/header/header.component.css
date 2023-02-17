@@ -1,0 +1,108 @@
+html {
+  background-color: black;
+}
+table {
+  margin-left:auto ;
+  margin-right:auto;
+  align-items: center;
+  column-rule-style: none;
+  border-collapse: collapse;
+  /* width: 90%; */
+  /* padding: 20px; */
+  /* margin: 100px auto; */
+  /* display: flex; */
+  justify-content: center;
+}
+#log-out{
+  height: 50px;
+  background-color: grey;
+  width: 1900px;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+}
+
+.logout {
+
+      width: auto;
+      background-color: rgba(182, 230, 11, 0.815);
+      height: 40px;
+      border: none;
+      padding: 10px;
+      font-size: larger;
+
+      /* font-family: 'Press Start 2P';
+      font-size: small; */
+    }
+
+        .logout:hover {
+          transform: scale(1.05);
+          z-index: 0.3;
+
+        }
+
+
+th {
+  height: 250px;
+  width: 480px;
+  border: none;
+  box-shadow: 0 0 20px 2px rgba(0,0,0,.1);
+  margin-right: 50px;
+
+}
+
+tr {
+  margin-right: 50px;
+}
+
+th:hover {
+  transform:scale(1.05) ;
+  z-index: 0.3;
+
+}
+
+
+.primo {
+  background-color: rgb(27, 102, 241);
+  border: solid grey 30px;
+  font-size: xx-large;
+  }
+
+.secondo {
+  background-color: green;
+  border: solid grey 30px;
+  font-size: xx-large;
+}
+
+.terzo {
+  background-color: orange;
+  border: solid grey 30px;
+  font-size: xx-large;
+}
+
+.quarto {
+  background-color: rgba(214, 11, 11, 0.74);
+  border: solid grey 30px;
+  font-size:xx-large
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

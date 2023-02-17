@@ -1,0 +1,84 @@
+.form-login {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5%;
+  height: 100px;
+
+}
+
+
+
+#prova {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+}
+
+#b-login {
+  background-color: rgb(10, 68, 230);
+  width: 100%;
+  height: 65px;
+  font-size: x-large;
+  border: none;
+  padding: 10px;
+  margin-right: 2%;
+
+  border-radius: 10px;
+}
+
+#b-login:hover {
+  text-decoration: underline;
+}
+
+
+
+#entra {
+  margin-top: 15%;
+  width: 150px;
+  background-color: rgb(10, 68, 230);
+  height: 100px;
+  border: none;
+  padding: 10px;
+  margin-right: 2%;
+  /* font-family: 'Press Start 2P';
+  font-size: small; */
+  border-radius: 10px;
+  font-size: x-large;
+  
+}
+
+#entra:hover {
+  transform: scale(1.05);
+  z-index: 0.3;
+
+}
+
+img {
+  width: 30%;
+  margin-left: 35%;
+  margin-right: 35%;
+  margin-top: 8%;
+  user-select: none;
+}
+
+
+.inserimento {
+  text-align: center;
+  width: 177px;
+  border: none;
+  border-radius: 10px;
+  height: 30px;
+}
+
+#inserimento {
+  margin-top: 100%;
+}
+
+#home {
+  background-color: yellow;
+  border: none;
+  padding: 10px;
+  margin-right: 2%;
+  font-family: 'Press Start 2P';
+  font-size: small
+}

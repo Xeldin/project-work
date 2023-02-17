@@ -1,4 +1,19 @@
-<button [routerLink]="['videogiochi']">VIDEOGIOCHI</button>
-<button [routerLink]="['news']">NEWS</button>
-<button [routerLink]="['categorie']">CATEGORIE</button>
-<button [routerLink]="['recensioni']">RECENSIONI</button>
+<div></div>
+<div id="log-out">
+  <button class="logout" (click)="onLogout()" [routerLink]="['']">LOG-OUT</button>
+</div>
+
+<table>
+  <tr>
+    <th [routerLink]="['categories']" class="primo">CATEGORIE</th><th [routerLink]="['videogames']" class="secondo">VIDEOGIOCHI</th>
+  </tr>
+  <tr>
+    <th [routerLink]="['recensioni']" class="terzo">RECENSIONI</th><th [routerLink]="['news']" class="quarto">NEWS</th>
+  </tr>
+</table>
+
+
+
+
+
+

@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Observable } from 'rxjs';
-import { Utente } from 'src/model/utente';
-import { AuthService } from 'src/service/auth.service';
+import { map, Observable } from 'rxjs';
+import { Utente } from 'src/app/model/utente';
+import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -31,8 +31,10 @@ export class HomeComponent {
     ngOnInit(): void {
       this.loggedUser$ = this.authService.loggedUser$;
       this.isLogged$ = this.authService.isLogged$;
-      // this.isNotLogged$ = this.isLogged$.pipe(map((logged) => !logged));
+      this.isNotLogged$ = this.isLogged$.pipe(map((logged) => !logged));
     }
+
+
 
 
 
@@ -49,12 +51,32 @@ export class HomeComponent {
     // Flip dell'if
     if (!logged) {
       alert('Credenziali errate!');
+      this.form = new FormGroup({
+      username: new FormControl('', {
+      nonNullable: true,
+      validators: Validators.required,
+    }),
+    password: new FormControl('', {
+      nonNullable: true,
+      validators: Validators.required,
+    }),
+      })
+    } else {
+      alert("Log-in effettuato con successo!")
+      this.form = new FormGroup({
+      username: new FormControl('', {
+      nonNullable: true,
+      validators: Validators.required,
+    }),
+    password: new FormControl('', {
+      nonNullable: true,
+      validators: Validators.required,
+    }),
+      })
     }
   }
 
-    onLogout() {
-    this.authService.logout();
-  }
+
 }
 
 
