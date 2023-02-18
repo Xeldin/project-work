@@ -11,7 +11,7 @@
     <div>
       <p>Recensore: {{ r.reviewerName }}</p>
       <p type="data"> Data; {{ r.publicationDate }}</p>
-      <p>Contenuto: {{ r.content }}</p>
+      <p>Contenuto: {{ r.content | slice : 0 : 15 }} ...</p>
       <p>Score: {{ r.score }}</p>
       <p>Gioco Recensito: {{ r.reviewedGame.name }}</p>
     </div>

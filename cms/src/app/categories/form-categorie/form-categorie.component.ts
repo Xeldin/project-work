@@ -27,6 +27,7 @@ export class FormCategorieComponent implements OnInit{
     });
     this.pulisciForm();
     alert('Categoria aggiunta con successo!');
+
   }
 
   pulisciForm(){

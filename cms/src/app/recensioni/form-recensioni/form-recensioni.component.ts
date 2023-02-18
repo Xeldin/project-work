@@ -44,6 +44,8 @@ export class FormRecensioniComponent implements OnInit {
         error => console.log(error)
       )
       }
+      alert('Recensione salvata con successo!');
+
     }
 
     isEditMode = false;
@@ -75,6 +77,8 @@ export class FormRecensioniComponent implements OnInit {
     }
     onClickSalvaModifiche() {
       this.recensioneService.updateRecensione(this.route.snapshot.paramMap.get('_id')!, this.form.value).subscribe();
+      alert('Modifica effettuata con successo!');
+
     }
   
   
